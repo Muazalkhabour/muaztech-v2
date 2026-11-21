@@ -1,6 +1,7 @@
 export const site = {
   name: "MUAZ TECH",
-  url: "https://muaztech.com",
+  // TODO: غيّرها للدومين الجديد لما تشتريه
+  url: "https://muaztech-01.vercel.app",
   title: "MUAZ TECH — تسويق رقمي مبني متل الكود",
   description:
     "بساعد أصحاب المشاريع يحوّلوا الزيارات لرسائل، والرسائل لزبائن. تسويق رقمي، برمجة، وتصميم UX/UI.",
