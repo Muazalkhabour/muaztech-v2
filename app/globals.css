@@ -1712,9 +1712,11 @@ html[dir="ltr"] .dev__bgcode { right: -40px; }
   .hero__caption { padding-bottom: 32px; }
 }
 
-/* phones: break the headline cleanly — "تسويق رقمي…" / "مبني متل الكود" */
+/* phones: Arabic headline on ONE line, scaled to the screen width;
+   English is longer, so it breaks cleanly into two lines instead */
 @media (max-width: 640px) {
-  .hero__title .gold { display: block; }
+  html[lang="ar"] .hero__title { white-space: nowrap; font-size: min(6.6vw, 28px) !important; }
+  html[lang="en"] .hero__title .gold { display: block; }
 }
 
 /* phones: calmer type scale in the hero */
