@@ -5,7 +5,8 @@ import { Hero } from "./Hero";
 import { Audit } from "./Audit";
 import { Projects } from "./Projects";
 import { Marketing } from "./Marketing";
-import { Leak, How, Services, Dev, UxUi, Library, About, FinalCta, WhatsAppFloat } from "./Sections";
+import { Leak, How, Services, Dev, UxUi, Library, About, FinalCta } from "./Sections";
+import { Assistant } from "./Assistant";
 
 export function HomePage({ t }: { t: Dict }) {
   const jsonLd = {
@@ -39,7 +40,7 @@ export function HomePage({ t }: { t: Dict }) {
         <About t={t} />
         <FinalCta t={t} />
       </main>
-      <WhatsAppFloat t={t} />
+      <Assistant lang={t.lang} />
     </>
   );
 }
