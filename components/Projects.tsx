@@ -1,8 +1,11 @@
 import Image from "next/image";
+import { waLink } from "@/lib/site";
 
 type Visual =
-  | { kind: "logo"; src: string; alt: string; bg: string; w: number; h: number; plate?: boolean }
+  | { kind: "shots"; shots: [string, string]; bg: string }
   | { kind: "erp" | "realestate" | "hospital" };
+
+const GOLD_BG = "radial-gradient(80% 70% at 50% 30%, rgba(212,175,55,0.22), #0e0e10 75%)";
 
 type Project = {
   name: string;
@@ -24,7 +27,7 @@ const PROJECTS: Project[] = [
     summary: "نظام عربي كامل لوكالات السفر: الركّاب، الحجوزات، الشركات والرحلات، والحسابات بمكان واحد.",
     did: ["لوحة أرقام بالمبيعات والأرباح", "فواتير PDF بالعربي", "تصدير كشوف الركّاب لـ Excel", "حساب الربح لكل حجز تلقائياً"],
     tags: ["Next.js", "Prisma", "PostgreSQL", "React-PDF"],
-    visual: { kind: "erp" },
+    visual: { kind: "shots", shots: ["/projects/rehlati-1.webp", "/projects/rehlati-2.webp"], bg: GOLD_BG },
     live: "https://rehlati-sys.vercel.app",
   },
   {
@@ -34,7 +37,7 @@ const PROJECTS: Project[] = [
     summary: "منصة للسوق العقاري السوري بتجمع المالك والمكتب والمستأجر: عرض، بحث، عقود، وبوابة للمستأجر.",
     did: ["بحث بفلاتر وخريطة", "عقود PDF ولوحة للمكتب", "بوابة خاصة للمستأجر", "صيانة وإشعارات"],
     tags: ["Next.js", "Supabase", "Prisma", "Leaflet"],
-    visual: { kind: "realestate" },
+    visual: { kind: "shots", shots: ["/projects/aqari-1.webp", "/projects/aqari-2.webp"], bg: "radial-gradient(80% 70% at 50% 30%, rgba(80,190,140,0.22), #0e0e10 75%)" },
     live: "https://aqari-saas.vercel.app",
     code: "https://github.com/Muazalkhabour/aqari-saas",
   },
@@ -54,7 +57,7 @@ const PROJECTS: Project[] = [
     summary: "موقع مطعم شاورما ببيوغلو مبني لهدف واحد: الزبون يشوف المنيو ويطلب بأسرع وقت.",
     did: ["منيو واضح وأزرار واتساب واتصال", "تتبّع تحويلات Google Ads وGA4", "SEO محلي لإسطنبول", "عدة لغات"],
     tags: ["Next.js", "GA4", "Google Ads", "i18n"],
-    visual: { kind: "logo", src: "/projects/chicken-plus-logo.webp", alt: "شعار Chicken Plus", bg: "radial-gradient(70% 70% at 50% 45%, rgba(245,140,30,0.28), #0e0e10 75%)", w: 480, h: 480 },
+    visual: { kind: "shots", shots: ["/projects/chicken-1.webp", "/projects/chicken-2.webp"], bg: "radial-gradient(80% 70% at 50% 30%, rgba(230,110,40,0.28), #0e0e10 75%)" },
     live: "https://chicken-plus-site.vercel.app",
   },
   {
@@ -64,7 +67,7 @@ const PROJECTS: Project[] = [
     summary: "موقع لشركة سياحة بتركيا: رحلات يومية، سيارة مع سائق، فنادق، وبرامج شهر عسل.",
     did: ["صفحات للرحلات والعروض", "تواصل مباشر عالواتساب", "عربي وأكتر من لغة", "صور وتقييمات الزبائن"],
     tags: ["HTML", "CSS", "JavaScript", "i18n"],
-    visual: { kind: "logo", src: "/projects/hayaturkey-logo.webp", alt: "شعار حياة تورك", bg: "radial-gradient(70% 70% at 50% 45%, rgba(40,170,170,0.25), #0e0e10 75%)", w: 640, h: 278, plate: true },
+    visual: { kind: "shots", shots: ["/projects/hayat-1.webp", "/projects/hayat-2.webp"], bg: "radial-gradient(80% 70% at 50% 30%, rgba(40,170,200,0.26), #0e0e10 75%)" },
     live: "https://hayaturkey-travel.vercel.app",
   },
 ];
@@ -124,13 +127,17 @@ export function Projects() {
         </div>
 
         <div className="grid projects-grid">
-          {PROJECTS.map((p, i) => (
-            <article key={p.name} className={`project card${i === 0 ? " project--wide" : ""}`}>
-              <div className="project__visual" style={p.visual.kind === "logo" ? { background: p.visual.bg } : undefined}>
-                {p.visual.kind === "logo" ? (
-                  <Image src={p.visual.src} alt={p.visual.alt} width={p.visual.w} height={p.visual.h}
-                    sizes="(max-width: 700px) 70vw, 320px"
-                    className={`project__logo${p.visual.plate ? " project__logo--plate" : ""}`} />
+          {PROJECTS.map((p) => (
+            <article key={p.name} className="project card">
+              <div className={`project__visual${p.visual.kind === "shots" ? " project__visual--shots" : ""}`}
+                style={p.visual.kind === "shots" ? { background: p.visual.bg } : undefined}>
+                {p.visual.kind === "shots" ? (
+                  p.visual.shots.map((src, k) => (
+                    <div key={src} className={`phone-shot phone-shot--${k}`}>
+                      <Image src={src} alt={k === 0 ? `${p.name}: لقطة من الموقع` : ""} width={560} height={721}
+                        sizes="(max-width: 700px) 45vw, 200px" />
+                    </div>
+                  ))
                 ) : (
                   <Mock kind={p.visual.kind} />
                 )}
@@ -157,6 +164,13 @@ export function Projects() {
               </div>
             </article>
           ))}
+          <a className="project project--cta" href={waLink("أهلين معاذ، عندي فكرة مشروع وبدي نحكي فيها.")}
+            target="_blank" rel="noopener noreferrer">
+            <span className="project--cta__code" aria-hidden="true" dir="ltr">&lt;/&gt;</span>
+            <h3>مشروعك الجاي؟</h3>
+            <p>موقع، نظام، أو متجر… احكيلي الفكرة، وبقلّك من وين منبلّش وقديش بدها.</p>
+            <span className="btn btn--gold" style={{ minHeight: 52, fontSize: 16 }}>احكيني عالواتساب</span>
+          </a>
         </div>
       </div>
     </section>
