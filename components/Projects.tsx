@@ -25,6 +25,7 @@ const PROJECTS: Project[] = [
     did: ["لوحة أرقام بالمبيعات والأرباح", "فواتير PDF بالعربي", "تصدير كشوف الركّاب لـ Excel", "حساب الربح لكل حجز تلقائياً"],
     tags: ["Next.js", "Prisma", "PostgreSQL", "React-PDF"],
     visual: { kind: "erp" },
+    live: "https://rehlati-sys.vercel.app",
   },
   {
     name: "عقاري",
@@ -54,6 +55,7 @@ const PROJECTS: Project[] = [
     did: ["منيو واضح وأزرار واتساب واتصال", "تتبّع تحويلات Google Ads وGA4", "SEO محلي لإسطنبول", "عدة لغات"],
     tags: ["Next.js", "GA4", "Google Ads", "i18n"],
     visual: { kind: "logo", src: "/projects/chicken-plus-logo.webp", alt: "شعار Chicken Plus", bg: "radial-gradient(70% 70% at 50% 45%, rgba(245,140,30,0.28), #0e0e10 75%)", w: 480, h: 480 },
+    live: "https://chicken-plus-site.vercel.app",
   },
   {
     name: "حياة تورك",
@@ -63,6 +65,7 @@ const PROJECTS: Project[] = [
     did: ["صفحات للرحلات والعروض", "تواصل مباشر عالواتساب", "عربي وأكتر من لغة", "صور وتقييمات الزبائن"],
     tags: ["HTML", "CSS", "JavaScript", "i18n"],
     visual: { kind: "logo", src: "/projects/hayaturkey-logo.webp", alt: "شعار حياة تورك", bg: "radial-gradient(70% 70% at 50% 45%, rgba(40,170,170,0.25), #0e0e10 75%)", w: 640, h: 278, plate: true },
+    live: "https://hayaturkey-travel.vercel.app",
   },
 ];
 
