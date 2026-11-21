@@ -16,6 +16,7 @@ export const navLinks = [
   { href: "#how", label: "كيف بشتغل" },
   { href: "#dev", label: "البرمجة" },
   { href: "#ux", label: "UX/UI" },
+  { href: "#projects", label: "المشاريع" },
   { href: "#library", label: "المكتبة" },
   { href: "#audit", label: "أدوات مجانية" },
   { href: "#about", label: "عني" },

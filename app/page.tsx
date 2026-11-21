@@ -1,6 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Audit } from "@/components/Audit";
+import { Projects } from "@/components/Projects";
 import { Leak, How, Services, Dev, UxUi, Library, About, FinalCta, WhatsAppFloat } from "@/components/Sections";
 import { site } from "@/lib/site";
 
@@ -30,6 +31,7 @@ export default function Home() {
         <Services />
         <Dev />
         <UxUi />
+        <Projects />
         <Library />
         <About />
         <FinalCta />

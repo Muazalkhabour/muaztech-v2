@@ -240,7 +240,7 @@ const REELS = [
 export function Library() {
   const ig = `https://instagram.com/${site.instagram}`;
   return (
-    <section id="library" className="section section--alt">
+    <section id="library" className="section">
       <div className="section__inner">
         <div className="lib-head">
           <div className="section-head">
@@ -276,7 +276,7 @@ const PRINCIPLES = [
 
 export function About() {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section section--alt">
       <div className="section__inner about">
         <div className="about__photo">
           <Image src="/images/muaz-round.png" alt="معاذ" width={260} height={260} />
