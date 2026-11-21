@@ -1716,3 +1716,13 @@ html[dir="ltr"] .dev__bgcode { right: -40px; }
 @media (max-width: 640px) {
   .hero__title .gold { display: block; }
 }
+
+/* phones: calmer type scale in the hero */
+@media (max-width: 640px) {
+  .hero__title { font-size: 26px; line-height: 1.3; }
+  .hero__sub { font-size: 15px; line-height: 1.75; }
+  .hero__copy { padding-top: 36px; gap: 14px; }
+  .hero__ctas .btn--gold { min-height: 50px; font-size: 16px; padding: 0 26px; }
+  .hero__name { font-size: 18px; }
+  .hero__role { font-size: 13px; }
+}
