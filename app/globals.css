@@ -410,14 +410,44 @@ img {
 
 /* ---------- leak ---------- */
 .leak-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .leak-card {
-  padding: 28px 24px;
-  border-radius: 20px;
+  position: relative;
+  padding: 22px 20px;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+}
+.leak-card__num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: var(--bg);
+  border: 1.5px solid rgba(212, 175, 55, 0.7);
+}
+.card--gold .leak-card__num {
+  background: var(--gold-grad);
+  color: var(--bg-2);
+  border: 0;
+}
+.leak-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 .num {
   align-self: flex-end;
@@ -426,7 +456,7 @@ img {
   color: var(--gold);
 }
 .leak-card h3 {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--white);
 }
@@ -434,14 +464,62 @@ img {
   color: var(--gold-light);
 }
 .leak-card p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: var(--muted);
 }
+.leak-card.card--gold p {
+  color: var(--ink-2);
+}
 .leak-card .exit {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   color: var(--warn);
+}
+@media (max-width: 900px) {
+  .leak-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* phones: a compact journey — number on the side, a gold line linking the stops */
+@media (max-width: 640px) {
+  .leak-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .leak-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .leak-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 34px;
+    top: 56px;
+    bottom: -12px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.7), rgba(212, 175, 55, 0.15));
+  }
+  .leak-card__num {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .leak-card__body {
+    gap: 3px;
+  }
+  .leak-card h3 {
+    font-size: 18px;
+  }
+  .leak-card p {
+    font-size: 14px;
+  }
+  .leak-card .exit {
+    font-size: 13px;
+  }
 }
 
 /* ---------- audit ---------- */

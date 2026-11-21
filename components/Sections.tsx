@@ -17,19 +17,21 @@ export function Leak({ t }: { t: Dict }) {
           <h2 className="h2">{l.title}</h2>
           <p className="lead">{l.lead}</p>
         </div>
-        <div className="grid leak-grid">
+        <ol className="grid leak-grid">
           {l.steps.map((s, i) => {
             const gold = i === l.steps.length - 1;
             return (
-              <div key={s.t} className={`leak-card card${gold ? " card--gold" : ""}`}>
-                <span className="num" dir="ltr">{pad2(i + 1)}</span>
-                <h3>{s.t}</h3>
-                <p style={gold ? { color: "var(--ink-2)" } : undefined}>{s.d}</p>
-                <span className="exit">{l.exitPrefix} {s.exit}</span>
-              </div>
+              <li key={s.t} className={`leak-card card${gold ? " card--gold" : ""}`}>
+                <span className="leak-card__num" dir="ltr">{pad2(i + 1)}</span>
+                <div className="leak-card__body">
+                  <h3>{s.t}</h3>
+                  <p>{s.d}</p>
+                  <span className="exit">{l.exitPrefix} {s.exit}</span>
+                </div>
+              </li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </section>
   );
