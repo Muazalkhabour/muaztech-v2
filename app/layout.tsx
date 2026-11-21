@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "MUAZ TECH — تسويق رقمي مبني متل الكود" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "MUAZ TECH — تسويق رقمي مبني متل الكود" }],
   },
-  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/og.jpg"] },
   icons: { icon: "/icon.svg" },
 };
 

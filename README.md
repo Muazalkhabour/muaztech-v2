@@ -29,7 +29,7 @@ npm run build
 
 - [ ] أسعار الباقات (حالياً `[السعر]` بـ `components/Sections.tsx`)
 - [ ] صفحات المكتبة (`/library`)، الروابط حالياً بتروح عالإنستغرام
-- [x] صورة OpenGraph 1200×630 (`public/og.png`)
+- [x] صورة OpenGraph 1200×630 (`public/og.jpg`)
 - [ ] لما تشتري الدومين: غيّر `url` بـ `lib/site.ts`
 
 ## النشر على Vercel
