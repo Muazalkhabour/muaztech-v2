@@ -297,7 +297,7 @@ img {
   text-align: center;
 }
 .hero__title {
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(30px, 4.6vw, 54px);
   line-height: 1.15;
   font-weight: 700;
   color: var(--white);
@@ -1710,4 +1710,9 @@ html[dir="ltr"] .dev__bgcode { right: -40px; }
 }
 @media (max-width: 640px) {
   .hero__caption { padding-bottom: 32px; }
+}
+
+/* phones: break the headline cleanly — "تسويق رقمي…" / "مبني متل الكود" */
+@media (max-width: 640px) {
+  .hero__title .gold { display: block; }
 }
