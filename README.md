@@ -1,6 +1,9 @@
 # muaztech.com — v2
 
-موقع MUAZ TECH: تسويق رقمي أولاً، ومعه البرمجة وUX/UI. عربي RTL، عامية شامية.
+موقع MUAZ TECH: تسويق رقمي أولاً، ومعه البرمجة وUX/UI.
+
+- **عربي** (عامية شامية، RTL) على `/`
+- **English** (LTR) على `/en`
 
 - **التقنية:** Next.js (App Router) + TypeScript، صفحة ستاتيك بالكامل، جاهز لـ Vercel.
 - **الخط:** IBM Plex Sans Arabic (عن طريق `next/font`).
@@ -19,17 +22,19 @@ npm run build
 
 | الملف | شو فيه |
 |---|---|
-| `lib/site.ts` | رقم الواتساب، الإنستغرام، الدومين، روابط القائمة |
-| `app/layout.tsx` | الخط، الميتاداتا، OpenGraph |
+| `lib/dict.ts` | **كل نصوص الموقع باللغتين** — عدّل من هون |
+| `lib/site.ts` | رقم الواتساب، الإنستغرام، الدومين |
+| `lib/page-shell.tsx` | الخط، الميتاداتا، OpenGraph لكل لغة |
+| `app/(ar)` و `app/(en)/en` | صفحة كل لغة |
 | `components/Hero.tsx` | الهيرو |
 | `components/Audit.tsx` | أداة «افحص مشروعك» (٦ أسئلة → أخضر/أصفر/أحمر → واتساب) |
 | `components/Sections.tsx` | المشكلة، كيف بشتغل، الخدمات، البرمجة، UX/UI، المكتبة، عني، الدعوة الأخيرة |
 
 ## لسا ناقص
 
-- [ ] أسعار الباقات (حالياً `[السعر]` بـ `components/Sections.tsx`)
+- [ ] أسعار الباقات (حالياً `[السعر]` / `[PRICE]` بـ `lib/dict.ts`)
 - [ ] صفحات المكتبة (`/library`)، الروابط حالياً بتروح عالإنستغرام
-- [x] صورة OpenGraph 1200×630 (`public/og.jpg`)
+- [x] صورة OpenGraph 1200×630 (`public/og.jpg` عربي، `public/og-en.jpg` إنجليزي)
 - [ ] لما تشتري الدومين: غيّر `url` بـ `lib/site.ts`
 
 ## النشر على Vercel
