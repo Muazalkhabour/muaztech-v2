@@ -1728,3 +1728,21 @@ html[dir="ltr"] .dev__bgcode { right: -40px; }
   .hero__name { font-size: 18px; }
   .hero__role { font-size: 13px; }
 }
+
+/* decorative layers must never swallow taps/clicks */
+.hero__code,
+.hero__halo,
+.hero__fade,
+.hero__grid,
+.hero__glow,
+.glow,
+.dev__bgcode {
+  pointer-events: none;
+}
+.hero__copy {
+  z-index: 4;
+}
+/* phones: keep the last footer links clear of the floating WhatsApp button */
+@media (max-width: 640px) {
+  .footer { padding-bottom: 96px; justify-content: center; text-align: center; }
+}
