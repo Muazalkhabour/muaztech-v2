@@ -50,9 +50,9 @@ const PROJECTS: ProjectMeta[] = [
 ];
 
 /** Drawn calendar screen for projects without public screenshots. */
-function CalendarMock() {
+function CalendarMock({ label }: { label: string }) {
   return (
-    <div className="mock" aria-hidden="true">
+    <div className="mock" role="img" aria-label={label}>
       <div className="mock__bar"><i /><i /><i /></div>
       <div className="mock__body">
         <div className="mock__cal">
@@ -89,12 +89,12 @@ export function Projects({ t }: { t: Dict }) {
                   {m.shots ? (
                     m.shots.map((src, k) => (
                       <div key={src} className={`phone-shot phone-shot--${k}`}>
-                        <Image src={src} alt={k === 0 ? P.shotAlt(p.name) : ""} width={560} height={721}
+                        <Image src={src} alt={P.alts[m.id][k]} width={560} height={721}
                           sizes="(max-width: 700px) 45vw, 200px" />
                       </div>
                     ))
                   ) : (
-                    <CalendarMock />
+                    <CalendarMock label={P.alts[m.id][0]} />
                   )}
                 </div>
                 <div className="project__body">

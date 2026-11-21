@@ -32,7 +32,7 @@ npm run build
 
 ## لسا ناقص
 
-- [ ] أسعار الباقات (حالياً `[السعر]` / `[PRICE]` بـ `lib/dict.ts`)
+- [ ] أسعار الباقات (حالياً «السعر حسب مشروعك» / "Priced to your project" بـ `lib/dict.ts` ← `services.price`)
 - [ ] صفحات المكتبة (`/library`)، الروابط حالياً بتروح عالإنستغرام
 - [x] صورة OpenGraph 1200×630 (`public/og.jpg` عربي، `public/og-en.jpg` إنجليزي)
 - [ ] لما تشتري الدومين: غيّر `url` بـ `lib/site.ts`

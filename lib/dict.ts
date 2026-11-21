@@ -172,7 +172,7 @@ const ar = {
     eyebrow: "الباقات",
     title: "من وين بدك نبلّش؟",
     badge: "المقترح",
-    price: "بيبلّش من [السعر]",
+    price: "السعر حسب مشروعك",
     more: "شوف التفاصيل ←",
     msg: (name: string) => `أهلين معاذ، حابب أعرف تفاصيل باقة «${name}».`,
     items: [
@@ -221,7 +221,25 @@ const ar = {
     lead: "أنظمة ومواقع بنيتها من الصفر: من لوحات التحكم والمحاسبة، لمواقع بتجيب طلبات.",
     visit: "شوف الموقع ←",
     code: "الكود على GitHub",
-    shotAlt: (name: string) => `${name}: لقطة من الموقع`,
+    alts: {
+      rehlati: [
+        "رحلاتي: القائمة الجانبية للنظام فيها لوحة التحكم، كشف المسافرين، الشركات، والحسابات",
+        "رحلاتي: لوحة التشغيل فيها المبيعات الكلية وزر لفتح كشف المسافرين",
+      ],
+      aqari: [
+        "عقاري: الصفحة الرئيسية فيها أقسام المدير وصاحب العقار والمستأجر",
+        "عقاري: كرت عقار لشقة عائلية بالمزة للإيجار، مع مراحل العقار والخريطة والعقد والإدارة",
+      ],
+      hms: ["نظام إدارة المستشفى: رسمة توضيحية لتقويم المواعيد وقائمة الحجوزات"],
+      chicken: [
+        "Chicken Plus: الواجهة الرئيسية مع أزرار اطلب عبر واتساب واتصل الآن وافتح الموقع",
+        "Chicken Plus: منيو الوجبات الرئيسية بصور الأكلات وأزرار واتساب واتصال لكل وجبة",
+      ],
+      hayat: [
+        "حياة تورك: الواجهة الرئيسية «اكتشف جمال تركيا» مع زري واتساب واتصال مباشر",
+        "حياة تورك: كرت رحلة بورصة الخضراء بالتلفريك بسعر ٤٠٠ ليرة مع زر احجز الآن",
+      ],
+    },
     items: {
       rehlati: {
         name: "رحلاتي",
@@ -262,7 +280,7 @@ const ar = {
     cta: {
       title: "مشروعك الجاي؟",
       text: "موقع، نظام، أو متجر… احكيلي الفكرة، وبقلّك من وين منبلّش وقديش بدها.",
-      button: "احكيني عالواتساب",
+      button: "ابدأ مشروعك عالواتساب",
       msg: "أهلين معاذ، عندي فكرة مشروع وبدي نحكي فيها.",
     },
   },
@@ -472,7 +490,7 @@ const en: Dict = {
     eyebrow: "Packages",
     title: "Where do you want to start?",
     badge: "Recommended",
-    price: "Starting from [PRICE]",
+    price: "Priced to your project",
     more: "See details →",
     msg: (name: string) => `Hi Muaz, I'd like details about the "${name}" package.`,
     items: [
@@ -521,7 +539,25 @@ const en: Dict = {
     lead: "Systems and websites I built from scratch: from dashboards and accounting to sites that bring in orders.",
     visit: "Visit site →",
     code: "Code on GitHub",
-    shotAlt: (name: string) => `${name}: site screenshot`,
+    alts: {
+      rehlati: [
+        "Rahalaty: the system's sidebar with dashboard, passenger manifest, companies, and accounting",
+        "Rahalaty: the operations dashboard showing total sales and a button to open the passenger manifest",
+      ],
+      aqari: [
+        "Aqari: the home page with sections for admins, property owners, and tenants",
+        "Aqari: a listing card for a family apartment for rent in Mezzeh, with property, map, contract, and management steps",
+      ],
+      hms: ["Hospital Management System: an illustration of the appointment calendar and booking list"],
+      chicken: [
+        "Chicken Plus: the hero with buttons to order on WhatsApp, call now, and open the location",
+        "Chicken Plus: the main-meals menu with dish photos and WhatsApp and call buttons for each meal",
+      ],
+      hayat: [
+        "Hayat Turk: the hero \u201cDiscover the beauty of Turkey\u201d with WhatsApp and direct-call buttons",
+        "Hayat Turk: a Bursa day-trip card with the cable car, priced at 400 lira, with a Book now button",
+      ],
+    },
     items: {
       rehlati: {
         name: "Rahalaty",
