@@ -33,4 +33,4 @@ npm run build
 
 ## النشر على Vercel
 
-Import للريبو بـ Vercel، و**Root Directory = `muaztech-v2`** إذا ضل المشروع بهالمجلد. بعدين ضيف الدومين `muaztech.com`.
+Import للريبو بـ Vercel (الإعدادات الافتراضية بتكفي)، وبعدين ضيف الدومين `muaztech.com`.
