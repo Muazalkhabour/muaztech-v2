@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { Dict } from "@/lib/dict";
-import { CapIcon } from "./Brand";
 
 export function Hero({ t }: { t: Dict }) {
   const h = t.hero;
@@ -18,7 +17,6 @@ export function Hero({ t }: { t: Dict }) {
           <a href="#audit" className="btn btn--gold">{h.cta}</a>
           <a href="#how" className="btn btn--ghost">{h.secondary}</a>
         </div>
-        <p className="hero__cred">{h.cred}</p>
       </div>
 
       <div className="hero__stage">
@@ -39,13 +37,14 @@ export function Hero({ t }: { t: Dict }) {
           <span style={{ fontSize: 13, color: "var(--muted)" }}>{h.chipTop[0]}</span>
           <span style={{ fontSize: 16, fontWeight: 700, color: "var(--gold-light)" }}>{h.chipTop[1]}</span>
         </div>
-        <div className="float-chip float-chip--bottom">
-          <CapIcon />
-          <span style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <span style={{ fontSize: 15, fontWeight: 700 }}>{h.chipBottom[0]}</span>
-            <span style={{ fontSize: 12, color: "var(--muted)" }}>{h.chipBottom[1]}</span>
-          </span>
-        </div>
+      </div>
+
+      <div className="hero__caption">
+        <p className="hero__name">
+          {h.name} <span className="hero__sep" aria-hidden="true">|</span>{" "}
+          <span dir="ltr" className="hero__brand"><span>M</span>UAZ <span>T</span>ECH</span>
+        </p>
+        <p className="hero__role">{h.role}</p>
       </div>
     </section>
   );
