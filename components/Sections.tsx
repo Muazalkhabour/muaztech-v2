@@ -237,9 +237,17 @@ export function About({ t }: { t: Dict }) {
   return (
     <section id="about" className="section">
       <div className="section__inner about">
-        <div className="about__photo">
-          <Image src="/images/muaz-round.png" alt={a.photoAlt} width={260} height={260} />
-        </div>
+        <figure className="about__photo">
+          <div className="about__frame">
+            <Image src="/images/muaz-desk.webp" alt={a.photoAlt} width={900} height={1125}
+              sizes="(max-width: 700px) 78vw, 380px" />
+            <span className="about__code" aria-hidden="true" dir="ltr">&lt;/&gt;</span>
+            <figcaption className="about__tag">
+              <strong>{a.tagName}</strong>
+              <span>{a.tagRole}</span>
+            </figcaption>
+          </div>
+        </figure>
         <div className="about__text">
           <span className="eyebrow">{a.eyebrow}</span>
           <h2 className="about__title">{a.title}</h2>

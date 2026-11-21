@@ -282,7 +282,9 @@ const ar = {
   about: {
     eyebrow: "أنا معاذ",
     title: "مبرمج ومسوّق رقمي… بفكّر بالتسويق متل الكود",
-    photoAlt: "معاذ",
+    photoAlt: "معاذ على مكتبه، وراه شعار MUAZ TECH وشاشة فيها كود",
+    tagName: "معاذ",
+    tagRole: "مبرمج ومسوّق رقمي",
     cert: "شهادة بالتسويق الرقمي",
     certSub: "جامعة إسطنبول ميديبول",
     certLatin: "Istanbul Medipol University",
@@ -580,7 +582,9 @@ const en: Dict = {
   about: {
     eyebrow: "I'm Muaz",
     title: "Developer & digital marketer… I think about marketing like code",
-    photoAlt: "Muaz",
+    photoAlt: "Muaz at his desk, with the MUAZ TECH sign and a screen full of code behind him",
+    tagName: "Muaz",
+    tagRole: "Developer & digital marketer",
     cert: "Digital Marketing degree",
     certSub: "Istanbul Medipol University",
     certLatin: "",
