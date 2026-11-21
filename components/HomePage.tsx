@@ -4,6 +4,7 @@ import { Nav } from "./Nav";
 import { Hero } from "./Hero";
 import { Audit } from "./Audit";
 import { Projects } from "./Projects";
+import { Marketing } from "./Marketing";
 import { Leak, How, Services, Dev, UxUi, Library, About, FinalCta, WhatsAppFloat } from "./Sections";
 
 export function HomePage({ t }: { t: Dict }) {
@@ -27,6 +28,7 @@ export function HomePage({ t }: { t: Dict }) {
       <main>
         <Hero t={t} />
         <Leak t={t} />
+        <Marketing t={t} />
         <Audit lang={t.lang} />
         <How t={t} />
         <Services t={t} />

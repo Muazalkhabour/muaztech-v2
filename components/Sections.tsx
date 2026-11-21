@@ -39,7 +39,7 @@ export function Leak({ t }: { t: Dict }) {
 export function How({ t }: { t: Dict }) {
   const h = t.how;
   return (
-    <section id="how" className="section section--alt">
+    <section id="how" className="section">
       <div className="section__inner" style={{ gap: 48 }}>
         <div className="section-head">
           <span className="eyebrow">{h.eyebrow}</span>
@@ -66,7 +66,7 @@ export function How({ t }: { t: Dict }) {
 export function Services({ t }: { t: Dict }) {
   const s = t.services;
   return (
-    <section id="services" className="section">
+    <section id="services" className="section section--alt">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{s.eyebrow}</span>
@@ -101,7 +101,7 @@ export function Services({ t }: { t: Dict }) {
 export function Dev({ t }: { t: Dict }) {
   const d = t.dev;
   return (
-    <section id="dev" className="section section--alt" style={{ overflow: "hidden" }}>
+    <section id="dev" className="section" style={{ overflow: "hidden" }}>
       <div className="dev__bgcode" aria-hidden="true" dir="ltr">&lt;/&gt;</div>
       <div className="section__inner">
         <div className="split">
@@ -146,7 +146,7 @@ export function Dev({ t }: { t: Dict }) {
 export function UxUi({ t }: { t: Dict }) {
   const u = t.ux;
   return (
-    <section id="ux" className="section">
+    <section id="ux" className="section section--alt">
       <div className="section__inner ux">
         <div className="ux__text">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -202,7 +202,7 @@ const REEL_GLOW = [0.35, 0.28, 0.22, 0.3];
 export function Library({ t }: { t: Dict }) {
   const l = t.library;
   return (
-    <section id="library" className="section">
+    <section id="library" className="section section--alt">
       <div className="section__inner">
         <div className="lib-head">
           <div className="section-head">
@@ -233,7 +233,7 @@ export function Library({ t }: { t: Dict }) {
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
-    <section id="about" className="section section--alt">
+    <section id="about" className="section">
       <div className="section__inner about">
         <div className="about__photo">
           <Image src="/images/muaz-round.png" alt={a.photoAlt} width={260} height={260} />

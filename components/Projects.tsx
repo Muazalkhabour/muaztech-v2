@@ -71,7 +71,7 @@ function CalendarMock() {
 export function Projects({ t }: { t: Dict }) {
   const P = t.projects;
   return (
-    <section id="projects" className="section section--alt">
+    <section id="projects" className="section">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{P.eyebrow}</span>
