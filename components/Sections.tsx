@@ -209,38 +209,46 @@ export function Library({ t }: { t: Dict }) {
   return (
     <section id="library" className="section">
       <div className="section__inner">
-        <div className="lib-head">
-          <div className="section-head">
-            <span className="eyebrow">{l.eyebrow}</span>
-            <h2 className="h2">{l.title}</h2>
-            <p className="lead">{l.lead}</p>
-          </div>
-          <div className="lib-follow">
-            <span>{l.watchOn}</span>
-            <a href={igUrl} target="_blank" rel="noopener noreferrer" className="btn btn--pill">Instagram</a>
-            <a href={tiktok} target="_blank" rel="noopener noreferrer" className="btn btn--pill">TikTok</a>
-          </div>
+        <div className="section-head">
+          <span className="eyebrow">{l.eyebrow}</span>
+          <h2 className="h2">{l.title}</h2>
+          <p className="lead">{l.lead}</p>
         </div>
-        <ol className="grid lib-series">
-          {l.series.map((sr, i) => {
-            const n = i + 1;
-            const num = ar ? (n === 10 ? "١٠" : AR_NUM[i]) : String(n);
-            return (
-              <li key={sr.t}>
-                <a href={igUrl} target="_blank" rel="noopener noreferrer"
-                  className={`lib-card${i === 0 ? " lib-card--first" : ""}`}>
-                  <span className="lib-card__num">{num}</span>
-                  <span className="lib-card__body">
-                    {i === 0 && <span className="lib-card__badge">{l.featured}</span>}
-                    <strong>{sr.t}</strong>
-                    <span>{sr.d}</span>
-                  </span>
-                  <span className="lib-card__eps">{l.episodes}</span>
-                </a>
-              </li>
-            );
-          })}
-        </ol>
+        {/* TODO: لما تجهز السلاسل، حط ready: true بـ lib/dict.ts وبتطلع القائمة */}
+        {l.ready ? (
+          <ol className="grid lib-series">
+            {l.series.map((sr, i) => {
+              const n = i + 1;
+              const num = ar ? (n === 10 ? "١٠" : AR_NUM[i]) : String(n);
+              return (
+                <li key={sr.t}>
+                  <a href={igUrl} target="_blank" rel="noopener noreferrer"
+                    className={`lib-card${i === 0 ? " lib-card--first" : ""}`}>
+                    <span className="lib-card__num">{num}</span>
+                    <span className="lib-card__body">
+                      {i === 0 && <span className="lib-card__badge">{l.featured}</span>}
+                      <strong>{sr.t}</strong>
+                      <span>{sr.d}</span>
+                    </span>
+                    <span className="lib-card__eps">{l.episodes}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        ) : (
+          <div className="lib-soon">
+            <span className="lib-soon__badge">{l.soonBadge}</span>
+            <div className="lib-soon__text">
+              <strong>{l.soonTitle}</strong>
+              <span>{l.soonText}</span>
+            </div>
+            <div className="lib-follow">
+              <a href={igUrl} target="_blank" rel="noopener noreferrer" className="btn btn--pill">Instagram</a>
+              <a href={tiktok} target="_blank" rel="noopener noreferrer" className="btn btn--pill">TikTok</a>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
