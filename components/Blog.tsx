@@ -36,7 +36,7 @@ export function BlogIndex({ lang }: { lang: Lang }) {
   return (
     <>
       <div className="proj-filter" role="group" aria-label={ui.eyebrow}>
-        {(["all", "marketing", "dev", "ux"] as const).map((k) => (
+        {(["all", "marketing", "dev", "ux"] as const).filter((k) => k === "all" || posts.some((p) => p.category === k)).map((k) => (
           <button key={k} type="button" aria-pressed={cat === k} className={`mk-goal${cat === k ? " is-on" : ""}`}
             onClick={() => setCat(k)}>{ui.cats[k]}</button>
         ))}
