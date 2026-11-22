@@ -6,6 +6,7 @@ import type { Lang } from "./dict";
  */
 
 export type ServiceCopy = {
+  short: string;
   nav: string;
   metaTitle: string;
   metaDesc: string;
@@ -43,6 +44,7 @@ export const services: Service[] = [
     home: "#marketing",
     copy: {
       ar: {
+        short: "محتوى بيجيب رسائل",
         nav: "إدارة السوشال ميديا",
         metaTitle: "إدارة سوشال ميديا وصناعة محتوى | MUAZ TECH",
         metaDesc: "إدارة حسابات إنستغرام وتيك توك وفيسبوك بمحتوى بيبيع: خطة شهرية، ريلز، كاروسيل، وسكربتات مكتوبة بلغة زبونك. اعمل فحص مجاني لحساباتك.",
@@ -83,6 +85,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، حابب تشوف حسابي على السوشال ميديا. هاد الرابط: ",
       },
       en: {
+        short: "Content that brings messages",
         nav: "Social Media Management",
         metaTitle: "Social Media Management & Content Creation | MUAZ TECH",
         metaDesc: "Instagram, TikTok and Facebook management with content that sells: a monthly plan, reels, carousels, and scripts in your customer's language. Get a free audit.",
@@ -131,6 +134,7 @@ export const services: Service[] = [
     home: "#marketing",
     copy: {
       ar: {
+        short: "فيسبوك وإنستغرام بلا هدر",
         nav: "إعلانات فيسبوك وإنستغرام",
         metaTitle: "إعلانات فيسبوك وإنستغرام (Meta Ads) | MUAZ TECH",
         metaDesc: "حملات إعلانية على فيسبوك وإنستغرام هدفها رسائل وطلبات ومبيعات، مع Pixel وConversions API مضبوطين واختبارات أسبوعية. بلا حرق مصاري.",
@@ -172,6 +176,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، بدي تفحصلي إعلاناتي على فيسبوك وإنستغرام.",
       },
       en: {
+        short: "Facebook & Instagram, no waste",
         nav: "Facebook & Instagram Ads",
         metaTitle: "Facebook & Instagram Ads (Meta Ads) | MUAZ TECH",
         metaDesc: "Facebook and Instagram campaigns built for messages, orders, and sales, with a properly configured Pixel and Conversions API and weekly testing. No burning cash.",
@@ -221,6 +226,7 @@ export const services: Service[] = [
     home: "#marketing",
     copy: {
       ar: {
+        short: "اطلع للي عم يدوّر عليك",
         nav: "إعلانات جوجل",
         metaTitle: "إعلانات جوجل (Google Ads) | MUAZ TECH",
         metaDesc: "اطلع قدام الناس اللي عم تدوّر على خدمتك هلق: حملات بحث وخرائط ويوتيوب، كلمات مفتاحية بتجيب زبائن، وتتبّع للمكالمات والواتساب.",
@@ -261,6 +267,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، حابب أعرف إذا إعلانات جوجل بتناسب مشروعي.",
       },
       en: {
+        short: "Reach people searching now",
         nav: "Google Ads",
         metaTitle: "Google Ads Management | MUAZ TECH",
         metaDesc: "Show up for people searching for your service right now: Search, Maps, and YouTube campaigns, buyer-intent keywords, and call and WhatsApp tracking.",
@@ -309,6 +316,7 @@ export const services: Service[] = [
     home: "#marketing",
     copy: {
       ar: {
+        short: "اطلع بجوجل والخرائط",
         nav: "SEO والظهور بجوجل",
         metaTitle: "تحسين محركات البحث SEO والظهور المحلي | MUAZ TECH",
         metaDesc: "خلّي زبونك يلاقيك لما يكتب خدمتك ومدينتك: SEO للموقع، ملف Google Business مرتّب، خطة تقييمات، وصفحات بتتصدّر البحث.",
@@ -349,6 +357,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، بدي تفحصلي ظهور مشروعي بجوجل.",
       },
       en: {
+        short: "Rank on Google & Maps",
         nav: "SEO & Google Visibility",
         metaTitle: "SEO & Local Search Optimization | MUAZ TECH",
         metaDesc: "Be found when customers search your service and city: website SEO, an optimized Google Business Profile, a review plan, and pages that rank.",
@@ -397,6 +406,7 @@ export const services: Service[] = [
     home: "#dev",
     copy: {
       ar: {
+        short: "مواقع وصفحات بتبيع",
         nav: "تصميم وبرمجة المواقع",
         metaTitle: "تصميم وبرمجة مواقع وصفحات هبوط | MUAZ TECH",
         metaDesc: "مواقع وصفحات هبوط سريعة عالموبايل ومبنية لتبيع، وأنظمة ولوحات تحكم للطلبات والحجوزات، مع ربط الواتساب والتتبّع. برمجة Next.js وReact.",
@@ -438,6 +448,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، بدي موقع لمشروعي وحابب نحكي بالتفاصيل.",
       },
       en: {
+        short: "Sites and pages that sell",
         nav: "Web Design & Development",
         metaTitle: "Website & Landing Page Design and Development | MUAZ TECH",
         metaDesc: "Fast, mobile-first websites and landing pages built to sell, plus systems and dashboards for orders and bookings, with WhatsApp and tracking built in. Next.js and React.",
@@ -487,6 +498,7 @@ export const services: Service[] = [
     home: "#ux",
     copy: {
       ar: {
+        short: "تجربة بتوصّل للزر",
         nav: "تصميم UX/UI",
         metaTitle: "تصميم تجربة وواجهة المستخدم UX/UI Design | MUAZ TECH",
         metaDesc: "تصميم UX/UI لمواقع وتطبيقات بتوصّل الزبون للزر بأقل كبسات: بحث المستخدم، رحلة الزبون، وايرفريم، واجهات بهويتك، ونموذج تفاعلي بتجربه قبل البرمجة.",
@@ -527,6 +539,7 @@ export const services: Service[] = [
         waMsg: "أهلين معاذ، عندي مشروع بحاجة تصميم UX/UI وحابب نحكي فيه.",
       },
       en: {
+        short: "Experiences that convert",
         nav: "UX/UI Design",
         metaTitle: "UX/UI Design for Websites and Apps | MUAZ TECH",
         metaDesc: "UX/UI design that gets customers to the button in the fewest taps: user research, customer journeys, wireframes, on-brand interfaces, and a clickable prototype before development.",
@@ -577,7 +590,7 @@ export const serviceBySlug = (slug: string) => services.find((s) => s.slug === s
 
 /** Small shared labels for service pages. */
 export const serviceUi: Record<Lang, {
-  home: string; services: string; otherTitle: string; audit: string; auditText: string; more: string;
+  home: string; services: string; otherTitle: string; audit: string; auditText: string; more: string; allMarketing: string;
 }> = {
   ar: {
     home: "الرئيسية",
@@ -586,6 +599,7 @@ export const serviceUi: Record<Lang, {
     audit: "اعمل الفحص المجاني",
     auditText: "مش متأكد شو بيحتاج مشروعك؟ جاوب على ٦ أسئلة بدقيقتين.",
     more: "اعرف أكتر ←",
+    allMarketing: "شوف كل خدمات التسويق",
   },
   en: {
     home: "Home",
@@ -594,5 +608,6 @@ export const serviceUi: Record<Lang, {
     audit: "Take the free audit",
     auditText: "Not sure what your business needs? Answer 6 questions in two minutes.",
     more: "Learn more →",
+    allMarketing: "See all marketing services",
   },
 };

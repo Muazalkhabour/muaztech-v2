@@ -3,7 +3,7 @@ import type { Dict } from "@/lib/dict";
 import { site, socials, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
 import { SocialLinks } from "./Social";
-import { serviceHref, serviceUi } from "@/lib/services";
+import { services, serviceHref, serviceUi } from "@/lib/services";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const igUrl = `https://instagram.com/${site.instagram}`;
@@ -344,6 +344,14 @@ export function FinalCta({ t }: { t: Dict }) {
         <a href={waLink(f.msg)} target="_blank" rel="noopener noreferrer"
           className="btn btn--gold" style={{ padding: "0 36px" }}>{f.button}</a>
       </div>
+      <nav className="foot-svcs" aria-label={serviceUi[t.lang].services}>
+        <strong>{serviceUi[t.lang].services}</strong>
+        <ul>
+          {services.map((s) => (
+            <li key={s.slug}><a href={serviceHref(t.lang, s.slug)}>{s.copy[t.lang].nav}</a></li>
+          ))}
+        </ul>
+      </nav>
       <footer className="footer">
         <Brand size={18} />
         <small>{f.footer}</small>

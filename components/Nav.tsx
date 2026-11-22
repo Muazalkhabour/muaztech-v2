@@ -5,6 +5,8 @@ import { dicts, type Lang } from "@/lib/dict";
 import { waLink } from "@/lib/site";
 import { Brand } from "./Brand";
 import { SocialLinks } from "./Social";
+import { ServiceIcon } from "./ServiceIcon";
+import { services, serviceHref, serviceUi } from "@/lib/services";
 
 const ICONS: Record<string, React.ReactNode> = {
   megaphone: (
@@ -129,18 +131,47 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
           </svg>
         </button>
         <div id="nav-links" className="nav__links">
-          {n.links.map((l, i) => (
-            <a key={l.href} href={h(l.href)} onClick={go}
-              className={active === l.href.slice(1) ? "is-active" : undefined}
-              aria-current={active === l.href.slice(1) ? "true" : undefined}
-              style={{ "--i": i } as React.CSSProperties}>
-              <span className="nav__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
-                  strokeLinecap="round" strokeLinejoin="round">{ICONS[l.icon]}</svg>
-              </span>
-              {l.label}
-            </a>
-          ))}
+          {n.links.map((l, i) => {
+            const link = (
+              <a key={l.href} href={h(l.href)} onClick={go}
+                className={`${active === l.href.slice(1) ? "is-active" : ""}${"menu" in l && l.menu ? " nav__dd-trigger" : ""}`}
+                aria-current={active === l.href.slice(1) ? "true" : undefined}
+                aria-haspopup={"menu" in l && l.menu ? "true" : undefined}
+                style={{ "--i": i } as React.CSSProperties}>
+                <span className="nav__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
+                    strokeLinecap="round" strokeLinejoin="round">{ICONS[l.icon]}</svg>
+                </span>
+                {l.label}
+                {"menu" in l && l.menu && (
+                  <svg className="nav__caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                )}
+              </a>
+            );
+            if (!("menu" in l && l.menu)) return link;
+            return (
+              <div key={l.href} className="nav__dd" style={{ "--i": i } as React.CSSProperties}>
+                {link}
+                <div className="nav__dd-panel">
+                  <ul>
+                    {services.map((s) => (
+                      <li key={s.slug}>
+                        <a href={serviceHref(lang, s.slug)} onClick={close} className="nav__svc">
+                          <span className="nav__svc-icon"><ServiceIcon name={s.icon} size={18} /></span>
+                          <span className="nav__svc-text">
+                            <strong>{s.copy[lang].nav}</strong>
+                            <span>{s.copy[lang].short}</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={h("#marketing")} onClick={go} className="nav__dd-all">{serviceUi[lang].allMarketing} {t.arrow}</a>
+                </div>
+              </div>
+            );
+          })}
         </div>
         <a href={h("#audit")} className="btn btn--pill nav__cta" onClick={go}>
           {n.cta}

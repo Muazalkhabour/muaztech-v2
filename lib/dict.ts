@@ -26,7 +26,7 @@ const ar = {
     close: "سكّر القائمة",
     cta: "اطلب فحص مشروعك",
     links: [
-      { href: "#marketing", label: "التسويق", icon: "megaphone" },
+      { href: "#marketing", label: "الخدمات", icon: "megaphone", menu: true },
       { href: "#audit", label: "الفحص المجاني", icon: "check" },
       { href: "#services", label: "الباقات", icon: "layers" },
       { href: "#dev", label: "البرمجة | UX/UI Design", icon: "code" },
@@ -461,7 +461,7 @@ const en: Dict = {
     close: "Close menu",
     cta: "Get a free audit",
     links: [
-      { href: "#marketing", label: "Marketing", icon: "megaphone" },
+      { href: "#marketing", label: "Services", icon: "megaphone", menu: true },
       { href: "#audit", label: "Free audit", icon: "check" },
       { href: "#services", label: "Packages", icon: "layers" },
       { href: "#dev", label: "Development | UX/UI Design", icon: "code" },
