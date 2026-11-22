@@ -7,6 +7,7 @@ import { Projects } from "./Projects";
 import { Marketing } from "./Marketing";
 import { Leak, How, Services, Dev, UxUi, Library, Faq, About, FinalCta } from "./Sections";
 import { Assistant } from "./Assistant";
+import { BlogTeaser } from "./BlogPages";
 
 export function HomePage({ t }: { t: Dict }) {
   const jsonLd = {
@@ -43,6 +44,7 @@ export function HomePage({ t }: { t: Dict }) {
         <UxUi t={t} />
         <Projects lang={t.lang} />
         <Library t={t} />
+        <BlogTeaser lang={t.lang} />
         <Faq t={t} />
         <About t={t} />
         <FinalCta t={t} />

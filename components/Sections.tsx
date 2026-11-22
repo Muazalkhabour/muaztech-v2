@@ -4,6 +4,7 @@ import { site, socials, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
 import { SocialLinks } from "./Social";
 import { servicesIn, serviceHref, serviceUi } from "@/lib/services";
+import { blogHref, blogUi } from "@/lib/blog";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const igUrl = `https://instagram.com/${site.instagram}`;
@@ -271,7 +272,7 @@ export function Library({ t }: { t: Dict }) {
 export function Faq({ t }: { t: Dict }) {
   const f = t.faq;
   return (
-    <section id="faq" className="section section--alt">
+    <section id="faq" className="section">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{f.eyebrow}</span>
@@ -294,7 +295,7 @@ export function Faq({ t }: { t: Dict }) {
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
-    <section id="about" className="section">
+    <section id="about" className="section section--alt">
       <div className="section__inner about">
         <figure className="about__photo">
           <div className="about__frame">
@@ -335,7 +336,7 @@ export function About({ t }: { t: Dict }) {
 export function FinalCta({ t }: { t: Dict }) {
   const f = t.final;
   return (
-    <section className="section section--alt">
+    <section className="section">
       <div className="glow" aria-hidden="true"
         style={{ background: "radial-gradient(50% 80% at 50% 100%, rgba(212,175,55,0.22), transparent 70%)" }} />
       <div className="final">
@@ -355,6 +356,10 @@ export function FinalCta({ t }: { t: Dict }) {
             </ul>
           </div>
         ))}
+        <div className="foot-svcs__group">
+          <strong>{blogUi[t.lang].nav}</strong>
+          <ul><li><a href={blogHref(t.lang)}>{blogUi[t.lang].title}</a></li></ul>
+        </div>
       </nav>
       <footer className="footer">
         <Brand size={18} />

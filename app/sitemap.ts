@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
+import { posts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -14,6 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     pages.push(
       { url: languages.ar, lastModified: now, changeFrequency: "monthly", priority: 0.8, alternates: { languages } },
       { url: languages.en, lastModified: now, changeFrequency: "monthly", priority: 0.7, alternates: { languages } },
+    );
+  }
+  const blog = { ar: `${site.url}/blog`, en: `${site.url}/en/blog` };
+  pages.push(
+    { url: blog.ar, lastModified: now, changeFrequency: "weekly", priority: 0.8, alternates: { languages: blog } },
+    { url: blog.en, lastModified: now, changeFrequency: "weekly", priority: 0.7, alternates: { languages: blog } },
+  );
+  for (const p of posts) {
+    const languages = { ar: `${site.url}/blog/${p.slug}`, en: `${site.url}/en/blog/${p.slug}` };
+    pages.push(
+      { url: languages.ar, lastModified: new Date(p.date), changeFrequency: "monthly", priority: 0.6, alternates: { languages } },
+      { url: languages.en, lastModified: new Date(p.date), changeFrequency: "monthly", priority: 0.5, alternates: { languages } },
     );
   }
   return pages;

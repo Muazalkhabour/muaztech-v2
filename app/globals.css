@@ -2609,3 +2609,55 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
 @media (max-width: 1100px) {
   .nav-wrap.is-open .nav__dd--dev .nav__dd-panel ul { grid-template-columns: 1fr 1fr; }
 }
+
+/* ---------- blog ---------- */
+.post-grid { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
+.post-card { height: 100%; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; color: var(--ink); transition: transform 0.2s, border-color 0.2s; }
+.post-card:hover { color: var(--ink); transform: translateY(-4px); border-color: rgba(212, 175, 55, 0.55); }
+.post-card__cover {
+  position: relative; aspect-ratio: 16 / 7; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background: radial-gradient(70% 90% at 50% 100%, rgba(212, 175, 55, 0.26), #0e0e10 70%);
+  border-bottom: 1px solid var(--card-line);
+}
+.post-card--dev .post-card__cover { background: radial-gradient(70% 90% at 30% 100%, rgba(212, 175, 55, 0.22), #0e0e10 70%); }
+.post-card--ux .post-card__cover { background: radial-gradient(70% 90% at 70% 100%, rgba(212, 175, 55, 0.22), #0e0e10 70%); }
+.post-card__code { font-size: 64px; font-weight: 700; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(245, 215, 122, 0.8); text-shadow: 0 0 24px rgba(212, 175, 55, 0.35); }
+.post-card__body { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 20px; }
+.post-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px; color: var(--muted); }
+.post-card__cat { align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.4); color: var(--gold-light); font-size: 12.5px; font-weight: 700; }
+.post-card strong { font-size: 18px; line-height: 1.5; color: var(--white); }
+.post-card__ex { font-size: 14.5px; line-height: 1.75; color: var(--ink-2); }
+.post-card__more { margin-top: auto; padding-top: 4px; font-size: 14.5px; font-weight: 700; color: var(--gold-light); }
+
+/* article */
+.art-title { font-size: clamp(28px, 4.4vw, 46px); line-height: 1.35; font-weight: 700; color: var(--white); }
+.art-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px; font-size: 14px; color: var(--muted); }
+.art-body { position: relative; max-width: 720px; margin: 0 auto; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 18px; }
+.art-body > p { font-size: 18px; line-height: 2; color: var(--ink); }
+.art-body > h2 { margin-top: 18px; font-size: clamp(22px, 3vw, 28px); line-height: 1.45; color: var(--white); }
+.art-body > ul, .art-body > ol { margin: 0; padding-inline-start: 24px; display: flex; flex-direction: column; gap: 10px; }
+.art-body > ul li, .art-body > ol li { font-size: 17px; line-height: 1.85; color: var(--ink); padding-inline-start: 4px; }
+.art-body > ul li::marker, .art-body > ol li::marker { color: var(--gold); font-weight: 700; }
+.art-body blockquote {
+  margin: 10px 0; padding: 18px 22px; border-radius: 16px; border-inline-start: 3px solid var(--gold);
+  background: rgba(212, 175, 55, 0.07); font-size: 19px; line-height: 1.8; font-weight: 700; color: var(--gold-light);
+}
+.art-tip { padding: 18px 20px; border-radius: 16px; background: #141417; border: 1px dashed rgba(212, 175, 55, 0.5); display: flex; flex-direction: column; gap: 6px; }
+.art-tip strong { font-size: 15px; color: var(--gold-light); }
+.art-tip p { font-size: 16px; line-height: 1.85; color: var(--ink-2); }
+.art-svc { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 16px; padding: 20px; border-radius: 20px; border-color: rgba(212, 175, 55, 0.45); }
+.art-svc > div { flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; }
+.art-svc__label { font-size: 13px; color: var(--muted); }
+.art-svc strong { font-size: 17px; color: var(--white); }
+.art-back { align-self: flex-start; font-size: 15px; font-weight: 700; }
+@media (max-width: 640px) {
+  .art-body { padding: 40px 20px 56px; }
+  .art-body > p { font-size: 17px; line-height: 1.95; }
+}
+/* desktop: the free-audit link duplicates the gold CTA button, so show it only in the phone menu */
+@media (min-width: 1101px) {
+  .nav__links > a[href$="#audit"] { display: none; }
+}
+
+/* long-form reading: no background pattern behind the text */
+.section--plain::before { display: none; }

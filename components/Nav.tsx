@@ -43,6 +43,12 @@ const ICONS: Record<string, React.ReactNode> = {
       <rect x="14" y="14" width="7" height="7" rx="1.5" />
     </>
   ),
+  book: (
+    <>
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z" />
+      <path d="M8 7h8M8 11h6" />
+    </>
+  ),
   user: (
     <>
       <circle cx="12" cy="8" r="4" />
@@ -59,7 +65,7 @@ const ICONS: Record<string, React.ReactNode> = {
 export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: boolean; switchHref?: string }) {
   const t = dicts[lang];
   const base = home ? "" : t.path === "/" ? "/" : t.path;
-  const h = (hash: string) => `${base}${hash}`;
+  const h = (href: string) => (href.startsWith("#") ? `${base}${href}` : href);
   const n = t.nav;
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
