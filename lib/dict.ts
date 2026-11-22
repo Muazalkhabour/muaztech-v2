@@ -307,8 +307,23 @@ const ar = {
         sub: "Hayat Turk Tourism",
         type: "موقع شركة سياحة",
         summary: "موقع لشركة سياحة بتركيا: رحلات يومية، سيارة مع سائق، فنادق، وبرامج شهر عسل.",
-        did: ["صفحات للرحلات والعروض", "تواصل مباشر عالواتساب", "عربي وأكتر من لغة", "صور وتقييمات الزبائن"],
+        did: ["موقع ومتجر إلكتروني للرحلات والعروض", "إدارة حملات التسويق الرقمي", "تواصل مباشر عالواتساب", "عربي وأكتر من لغة"],
       },
+    },
+    reviews: {
+      eyebrow: "شو قالوا عني",
+      title: ["كلام زبائن… ", "مو كلامي"],
+      items: [
+        {
+          id: "hayat",
+          highlight: "الشغل معك ما كان مجرد تسليم مشروع، كان عبارة عن شراكة حقيقية",
+          text: "حبيت أكتب لك هالرسالة وأنا بكامل الامتنان للتحول الجذري اللي صار معي بفضل شغلك الاحترافي؛ من تصميم الموقع والمتجر الإلكتروني، وصولاً لإدارة حملات التسويق الرقمي وبناء الوجود القوي أونلاين. بصراحة، على قد ما جربت وتجاربي السابقة مع غيرك كانت محدودة النتيجة، على قد ما تفاجأت بمستوى الاحترافية والذكاء بالتنفيذ معك. الشغل معك ما كان مجرد تسليم مشروع، كان عبارة عن شراكة حقيقية جابت لي أرباح ونتائج استثنائية فاقت كل توقعاتي وبشكل ملحوظ جداً من أول فترة. التنسيق، اللمسات الإبداعية، وسرعة العائد على الاستثمار أثبتت لي أنك فعلاً شخص محترف وفاهم شغلك صح وبكل تفاصيله.",
+          who: "صاحب شركة حياة تورك",
+          what: "سياحة · تركيا",
+          services: ["موقع ومتجر إلكتروني", "حملات تسويق رقمي"],
+        },
+      ],
+      source: "منقولة من رسالة واتساب، وبموافقة صاحب المشروع.",
     },
     cta: {
       title: "مشروعك الجاي؟",
@@ -376,6 +391,11 @@ const ar = {
       "درست هندسة الحواسيب، وبعدين اختصّيت بالتسويق الرقمي والبرمجة وتصميم UX/UI.",
       "ووقت اشتغلت بالعمل الحر، انتبهت لشغلة: هالمجالات مش منفصلة عن بعض، هي مكمّلة لبعضها. الإعلان بيجيب الزائر، التصميم بيريّحه، والكود بيخلّي كل شي يشتغل وينقاس.",
       "فحبّيت أجمعهم تحت سقف واحد، وطوّر فيهم سوا. يعني بدل ما تتعامل مع مسوّق ومصمم ومبرمج ما بيفهموا على بعض… بتتعامل مع شخص واحد شايف الصورة كاملة.",
+    ],
+    stats: [
+      { v: "٥", l: "مشاريع حقيقية" },
+      { v: "عدة دول", l: "عملاء منها" },
+      { v: "٣", l: "مجالات تحت سقف واحد" },
     ],
     pillars: [
       { icon: "chip", t: "هندسة الحواسيب", d: "الأساس التقني: كيف بتنبنى الأنظمة صح." },
@@ -746,8 +766,23 @@ const en: Dict = {
         sub: "Tourism · Turkey",
         type: "Travel agency website",
         summary: "A travel agency site in Turkey: day trips, car with driver, hotels, and honeymoon packages.",
-        did: ["Pages for trips and offers", "Direct WhatsApp contact", "Arabic plus more languages", "Customer photos & reviews"],
+        did: ["Website and online store for trips and offers", "Digital marketing campaign management", "Direct WhatsApp contact", "Arabic plus more languages"],
       },
+    },
+    reviews: {
+      eyebrow: "What clients say",
+      title: ["Clients' words… ", "not mine"],
+      items: [
+        {
+          id: "hayat",
+          highlight: "Working with you wasn't just a project handover; it was a real partnership",
+          text: "I wanted to write you this message with full gratitude for the radical transformation that happened thanks to your professional work: from designing the website and online store to managing digital marketing campaigns and building a strong online presence. Honestly, as limited as my previous experiences with others were, I was just as surprised by the level of professionalism and smart execution with you. Working with you wasn't just a project handover; it was a real partnership that brought me profits and exceptional results beyond all my expectations, noticeably so from the very start. The coordination, the creative touches, and the fast return on investment proved to me that you're truly a professional who understands his work in every detail.",
+          who: "Owner, Hayat Turk",
+          what: "Tourism · Turkey",
+          services: ["Website & online store", "Digital marketing campaigns"],
+        },
+      ],
+      source: "Translated from Arabic; taken from a WhatsApp message, shared with the client's permission.",
     },
     cta: {
       title: "Your next project?",
@@ -815,6 +850,11 @@ const en: Dict = {
       "I studied computer engineering, then specialized in digital marketing, development, and UX/UI design.",
       "When I started freelancing, I noticed something: these fields aren't separate, they complete each other. Ads bring the visitor, design makes them comfortable, and code makes everything work and measurable.",
       "So I brought them together under one roof and kept growing in all three. Instead of dealing with a marketer, a designer, and a developer who don't understand each other… you work with one person who sees the whole picture.",
+    ],
+    stats: [
+      { v: "5", l: "real projects" },
+      { v: "Several", l: "countries I've worked with" },
+      { v: "3", l: "fields under one roof" },
     ],
     pillars: [
       { icon: "chip", t: "Computer engineering", d: "The technical foundation: how systems are built right." },

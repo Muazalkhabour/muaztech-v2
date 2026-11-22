@@ -2701,3 +2701,29 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
   .pillar > span:last-child { font-size: 13px; line-height: 1.6; }
   .about__story p { font-size: 16px; line-height: 1.9; }
 }
+
+/* about stats */
+.about__stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.about__stats li {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 8px; text-align: center;
+  border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.3); background: rgba(212, 175, 55, 0.05);
+}
+.about__stats strong { font-size: 26px; line-height: 1.2; color: var(--gold-light); }
+.about__stats span { font-size: 13px; color: var(--ink-2); }
+@media (max-width: 640px) { .about__stats strong { font-size: 21px; } .about__stats span { font-size: 12px; } }
+
+/* testimonials */
+.reviews { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.review { position: relative; margin: 0; padding: 32px 28px 24px; border-radius: 24px; display: flex; flex-direction: column; gap: 20px; border-color: rgba(212, 175, 55, 0.4) !important; }
+.review__mark { position: absolute; top: -6px; inset-inline-end: 22px; font-size: 110px; line-height: 1; font-family: Georgia, serif; color: rgba(212, 175, 55, 0.22); pointer-events: none; }
+.review blockquote { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.review__highlight { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.6; font-weight: 700; color: var(--gold-light); }
+.review__text { font-size: 16px; line-height: 1.95; color: var(--ink-2); }
+.review__who { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; padding-top: 16px; border-top: 1px solid var(--card-line); }
+.review__avatar { width: 46px; height: 46px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--gold-grad); color: var(--bg-2); font-weight: 700; font-size: 18px; }
+.review__meta { display: flex; flex-direction: column; gap: 2px; flex: 1 1 160px; }
+.review__meta strong { font-size: 16px; color: var(--white); }
+.review__meta span { font-size: 13px; color: var(--muted); }
+.review__chips { justify-content: flex-start; }
+.review__source { font-size: 13px; color: var(--muted); }
+@media (max-width: 640px) { .review { padding: 26px 18px 20px; } .review__text { font-size: 15px; } }

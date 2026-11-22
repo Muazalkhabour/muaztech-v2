@@ -147,6 +147,34 @@ export function Projects({ lang }: { lang: Lang }) {
             <span className="btn btn--gold" style={{ minHeight: 52, fontSize: 16 }}>{P.cta.button}</span>
           </a>
         </div>
+
+        {/* testimonials */}
+        <div className="reviews">
+          <div className="section-head">
+            <span className="eyebrow">{P.reviews.eyebrow}</span>
+            <h2 className="h2">{P.reviews.title[0]}<span className="gold">{P.reviews.title[1]}</span></h2>
+          </div>
+          {P.reviews.items.map((r) => (
+            <figure key={r.id} className="review card">
+              <span className="review__mark" aria-hidden="true">&rdquo;</span>
+              <blockquote>
+                <p className="review__highlight">«{r.highlight}»</p>
+                <p className="review__text">{r.text}</p>
+              </blockquote>
+              <figcaption className="review__who">
+                <span className="review__avatar" aria-hidden="true">{lang === "ar" ? "ح" : "H"}</span>
+                <span className="review__meta">
+                  <strong>{r.who}</strong>
+                  <span>{r.what}</span>
+                </span>
+                <span className="chips review__chips">
+                  {r.services.map((s) => <span key={s} className="chip">{s}</span>)}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+          <p className="review__source">{P.reviews.source}</p>
+        </div>
       </div>
     </section>
   );

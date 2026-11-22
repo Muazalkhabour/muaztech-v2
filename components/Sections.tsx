@@ -315,6 +315,11 @@ export function About({ t }: { t: Dict }) {
           <div className="about__story">
             {a.story.map((p) => <p key={p}>{p}</p>)}
           </div>
+          <ul className="about__stats">
+            {a.stats.map((st) => (
+              <li key={st.l}><strong>{st.v}</strong><span>{st.l}</span></li>
+            ))}
+          </ul>
           <ul className="grid about__pillars">
             {a.pillars.map((p) => (
               <li key={p.t} className="pillar card">
