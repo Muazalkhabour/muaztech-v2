@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Dict } from "@/lib/dict";
 import { site, socials, waLink } from "@/lib/site";
-import { Brand, CapIcon } from "./Brand";
+import { Brand } from "./Brand";
 import { SocialLinks } from "./Social";
 import { servicesIn, serviceHref, serviceUi } from "@/lib/services";
 import { blogHref, blogUi } from "@/lib/blog";
@@ -292,6 +292,12 @@ export function Faq({ t }: { t: Dict }) {
 }
 
 /* ---------- عني ---------- */
+const PILLAR_ICONS: Record<string, React.ReactNode> = {
+  chip: (<><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" /></>),
+  cap: (<><path d="M2 9l10-5 10 5-10 5z" /><path d="M6 11v5c3 2 9 2 12 0v-5" /><path d="M22 9v6" /></>),
+  spark: (<><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" /></>),
+};
+
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
@@ -300,27 +306,28 @@ export function About({ t }: { t: Dict }) {
         <figure className="about__photo">
           <div className="about__frame">
             <Image src="/images/muaz-desk.webp" alt={a.photoAlt} width={900} height={1125}
-              sizes="(max-width: 700px) 78vw, 380px" />
+              sizes="(max-width: 700px) 60vw, 340px" />
           </div>
         </figure>
         <div className="about__text">
           <span className="eyebrow">{a.eyebrow}</span>
-          <h2 className="about__title">{a.title}</h2>
-          <div className="cert">
-            <CapIcon size={28} withTassel />
-            <div style={{ minWidth: 0 }}>
-              <strong>{a.cert}</strong>
-              <span>{a.certSub}{a.certLatin && <> · <span dir="ltr">{a.certLatin}</span></>}</span>
-            </div>
+          <h2 className="about__title">{a.title[0]}<span className="gold">{a.title[1]}</span></h2>
+          <div className="about__story">
+            {a.story.map((p) => <p key={p}>{p}</p>)}
           </div>
-          <div className="grid principles">
-            {a.principles.map((p) => (
-              <div key={p.t} className="principle card">
+          <ul className="grid about__pillars">
+            {a.pillars.map((p) => (
+              <li key={p.t} className="pillar card">
+                <span className="pillar__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
+                    strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{PILLAR_ICONS[p.icon]}</svg>
+                </span>
                 <strong>{p.t}</strong>
                 <span>{p.d}</span>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
+          <a href={waLink(a.ctaMsg)} target="_blank" rel="noopener noreferrer" className="btn btn--gold about__cta">{a.cta}</a>
         </div>
       </div>
     </section>

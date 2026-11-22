@@ -370,18 +370,20 @@ const ar = {
   },
   about: {
     eyebrow: "أنا معاذ",
-    title: "مبرمج ومسوّق رقمي… بفكّر بالتسويق متل الكود",
+    title: ["تلات مجالات… ", "بعقل واحد"],
     photoAlt: "معاذ على مكتبه، وراه شعار MUAZ TECH وشاشة فيها كود",
-    tagName: "معاذ",
-    tagRole: "مبرمج ومسوّق رقمي",
-    cert: "شهادة بالتسويق الرقمي",
-    certSub: "جامعة إسطنبول ميديبول",
-    certLatin: "Istanbul Medipol University",
-    principles: [
-      { t: "ما بخترع أرقام", d: "كل نتيجة حقيقية، وكل مثال مكتوب عليه «مثال»." },
-      { t: "الحسابات باسمك", d: "الدومين والإعلانات والبكسل… إلك، وأنا شريك." },
-      { t: "تقرير بتفهمه", d: "صفحة وحدة كل أسبوع، و٣ قرارات واضحة." },
+    story: [
+      "درست هندسة الحواسيب، وبعدين اختصّيت بالتسويق الرقمي والبرمجة وتصميم UX/UI.",
+      "ووقت اشتغلت بالعمل الحر، انتبهت لشغلة: هالمجالات مش منفصلة عن بعض، هي مكمّلة لبعضها. الإعلان بيجيب الزائر، التصميم بيريّحه، والكود بيخلّي كل شي يشتغل وينقاس.",
+      "فحبّيت أجمعهم تحت سقف واحد، وطوّر فيهم سوا. يعني بدل ما تتعامل مع مسوّق ومصمم ومبرمج ما بيفهموا على بعض… بتتعامل مع شخص واحد شايف الصورة كاملة.",
     ],
+    pillars: [
+      { icon: "chip", t: "هندسة الحواسيب", d: "الأساس التقني: كيف بتنبنى الأنظمة صح." },
+      { icon: "cap", t: "شهادة بالتسويق الرقمي", d: "جامعة إسطنبول ميديبول · Istanbul Medipol University" },
+      { icon: "spark", t: "خبرة بالعمل الحر", d: "مشاريع حقيقية علّمتني شو بيشتغل فعلاً." },
+    ],
+    cta: "خلّينا نحكي عن مشروعك",
+    ctaMsg: "أهلين معاذ، قريت قصتك بالموقع وحابب نحكي عن مشروعي.",
   },
   assistant: {
     open: "افتح مساعد MUAZ TECH",
@@ -807,18 +809,20 @@ const en: Dict = {
   },
   about: {
     eyebrow: "I'm Muaz",
-    title: "Developer & digital marketer… I think about marketing like code",
+    title: ["Three fields… ", "one mind"],
     photoAlt: "Muaz at his desk, with the MUAZ TECH sign and a screen full of code behind him",
-    tagName: "Muaz",
-    tagRole: "Developer & digital marketer",
-    cert: "Digital Marketing degree",
-    certSub: "Istanbul Medipol University",
-    certLatin: "",
-    principles: [
-      { t: "I don't invent numbers", d: "Every result is real, and every example is labeled “example.”" },
-      { t: "Accounts in your name", d: "Domain, ads, and pixel… they're yours. I'm your partner." },
-      { t: "Reports you understand", d: "One page every week, with 3 clear decisions." },
+    story: [
+      "I studied computer engineering, then specialized in digital marketing, development, and UX/UI design.",
+      "When I started freelancing, I noticed something: these fields aren't separate, they complete each other. Ads bring the visitor, design makes them comfortable, and code makes everything work and measurable.",
+      "So I brought them together under one roof and kept growing in all three. Instead of dealing with a marketer, a designer, and a developer who don't understand each other… you work with one person who sees the whole picture.",
     ],
+    pillars: [
+      { icon: "chip", t: "Computer engineering", d: "The technical foundation: how systems are built right." },
+      { icon: "cap", t: "Digital Marketing degree", d: "Istanbul Medipol University" },
+      { icon: "spark", t: "Freelance experience", d: "Real projects taught me what actually works." },
+    ],
+    cta: "Let's talk about your project",
+    ctaMsg: "Hi Muaz, I read your story on the website and would like to talk about my project.",
   },
   assistant: {
     open: "Open the MUAZ TECH assistant",
