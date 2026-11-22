@@ -163,7 +163,7 @@ export function BlogTeaser({ lang }: { lang: Lang }) {
   const ui = blogUi[lang];
   const latest = [...posts].slice(0, 3);
   return (
-    <section id="blog" className="section section--alt">
+    <section id="blog" className="section">
       <div className="section__inner">
         <div className="lib-head">
           <div className="section-head">

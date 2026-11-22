@@ -82,7 +82,7 @@ export function Projects({ lang }: { lang: Lang }) {
   const [kind, setKind] = useState<"all" | "systems" | "sites">("all");
   const shown = PROJECTS.filter((m) => kind === "all" || m.kind === kind);
   return (
-    <section id="projects" className="section section--alt">
+    <section id="projects" className="section">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{P.eyebrow}</span>
@@ -148,7 +148,17 @@ export function Projects({ lang }: { lang: Lang }) {
           </a>
         </div>
 
-        {/* testimonials */}
+      </div>
+    </section>
+  );
+}
+
+/** Client testimonials: its own section, placed right before the packages */
+export function Reviews({ lang }: { lang: Lang }) {
+  const P = dicts[lang].projects;
+  return (
+    <section id="reviews" className="section">
+      <div className="section__inner">
         <div className="reviews">
           <div className="section-head">
             <span className="eyebrow">{P.reviews.eyebrow}</span>

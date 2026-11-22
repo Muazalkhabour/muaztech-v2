@@ -3,7 +3,7 @@ import { site, socials } from "@/lib/site";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
 import { Audit } from "./Audit";
-import { Projects } from "./Projects";
+import { Projects, Reviews } from "./Projects";
 import { Marketing } from "./Marketing";
 import { Leak, How, Services, Dev, UxUi, Library, Faq, About, FinalCta } from "./Sections";
 import { Assistant } from "./Assistant";
@@ -39,6 +39,7 @@ export function HomePage({ t }: { t: Dict }) {
         <Leak t={t} />
         <Audit lang={t.lang} />
         <How t={t} />
+        <Reviews lang={t.lang} />
         <Services t={t} />
         <Dev t={t} />
         <UxUi t={t} />

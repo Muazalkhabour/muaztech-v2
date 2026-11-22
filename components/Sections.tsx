@@ -71,7 +71,7 @@ export function How({ t }: { t: Dict }) {
 export function Services({ t }: { t: Dict }) {
   const s = t.services;
   return (
-    <section id="services" className="section">
+    <section id="services" className="section section--alt">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{s.eyebrow}</span>
@@ -106,7 +106,7 @@ export function Services({ t }: { t: Dict }) {
 export function Dev({ t }: { t: Dict }) {
   const d = t.dev;
   return (
-    <section id="dev" className="section section--alt" style={{ overflow: "hidden" }}>
+    <section id="dev" className="section" style={{ overflow: "hidden" }}>
       <div className="dev__bgcode" aria-hidden="true" dir="ltr">&lt;/&gt;</div>
       <div className="section__inner">
         <div className="split">
@@ -152,7 +152,7 @@ export function Dev({ t }: { t: Dict }) {
 export function UxUi({ t }: { t: Dict }) {
   const u = t.ux;
   return (
-    <section id="ux" className="section">
+    <section id="ux" className="section section--alt">
       <div className="section__inner ux">
         <div className="ux__text">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -211,7 +211,7 @@ export function Library({ t }: { t: Dict }) {
   const ar = t.lang === "ar";
   const tiktok = socials.find((s) => s.id === "tiktok")!.href;
   return (
-    <section id="library" className="section">
+    <section id="library" className="section section--alt">
       <div className="section__inner">
         {l.ready ? (
           <>
@@ -272,7 +272,7 @@ export function Library({ t }: { t: Dict }) {
 export function Faq({ t }: { t: Dict }) {
   const f = t.faq;
   return (
-    <section id="faq" className="section">
+    <section id="faq" className="section section--alt">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{f.eyebrow}</span>
@@ -301,7 +301,7 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
-    <section id="about" className="section section--alt">
+    <section id="about" className="section">
       <div className="section__inner about">
         <figure className="about__photo">
           <div className="about__frame">
@@ -344,7 +344,7 @@ export function About({ t }: { t: Dict }) {
 export function FinalCta({ t }: { t: Dict }) {
   const f = t.final;
   return (
-    <section className="section">
+    <section className="section section--alt">
       <div className="glow" aria-hidden="true"
         style={{ background: "radial-gradient(50% 80% at 50% 100%, rgba(212,175,55,0.22), transparent 70%)" }} />
       <div className="final">

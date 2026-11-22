@@ -408,8 +408,8 @@ const ar = {
     photoAlt: "معاذ على مكتبه، وراه شعار MUAZ TECH وشاشة فيها كود",
     story: [
       "درست هندسة الحواسيب، وبعدين اختصّيت بالتسويق الرقمي والبرمجة وتصميم UX/UI.",
-      "ووقت اشتغلت بالعمل الحر، انتبهت لشغلة: هالمجالات مش منفصلة عن بعض، هي مكمّلة لبعضها. الإعلان بيجيب الزائر، التصميم بيريّحه، والكود بيخلّي كل شي يشتغل وينقاس.",
-      "فحبّيت أجمعهم تحت سقف واحد، وطوّر فيهم سوا. يعني بدل ما تتعامل مع مسوّق ومصمم ومبرمج ما بيفهموا على بعض… بتتعامل مع شخص واحد شايف الصورة كاملة.",
+      "ووقت اشتغلت بالعمل الحر مع مشاريع من ١٠ دول، انتبهت لشغلة: هالتلاتة مش منفصلين عن بعض… هنّي حلقات بنفس السلسلة. الإعلان بيجيب الزائر، التصميم بيريّحه، والكود بيخلّي كل شي يشتغل وينقاس.",
+      "ومن هون إجت MUAZ TECH: مكان واحد بيجمعهم. يعني بدل ما تتعامل مع مسوّق ومصمم ومبرمج ما بيفهموا على بعض… بتتعامل مع شخص واحد شايف الصورة كاملة، ومسؤول عن النتيجة من أولها لآخرها.",
     ],
     stats: [
       { v: "+٢٤", l: "مشروع سلّمته" },
@@ -887,8 +887,8 @@ const en: Dict = {
     photoAlt: "Muaz at his desk, with the MUAZ TECH sign and a screen full of code behind him",
     story: [
       "I studied computer engineering, then specialized in digital marketing, development, and UX/UI design.",
-      "When I started freelancing, I noticed something: these fields aren't separate, they complete each other. Ads bring the visitor, design makes them comfortable, and code makes everything work and measurable.",
-      "So I brought them together under one roof and kept growing in all three. Instead of dealing with a marketer, a designer, and a developer who don't understand each other… you work with one person who sees the whole picture.",
+      "Freelancing with businesses from 10 countries, I noticed something: these three aren't separate… they're links in the same chain. Ads bring the visitor, design makes them comfortable, and code makes everything work and measurable.",
+      "That's how MUAZ TECH was born: one place that brings them together. Instead of dealing with a marketer, a designer, and a developer who don't understand each other… you work with one person who sees the whole picture and owns the result from start to finish.",
     ],
     stats: [
       { v: "24+", l: "projects delivered" },
