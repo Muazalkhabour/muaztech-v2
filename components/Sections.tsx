@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Dict } from "@/lib/dict";
-import { site, waLink } from "@/lib/site";
+import { site, socials, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
 import { SocialLinks } from "./Social";
 
@@ -42,7 +42,7 @@ export function Leak({ t }: { t: Dict }) {
 export function How({ t }: { t: Dict }) {
   const h = t.how;
   return (
-    <section id="how" className="section">
+    <section id="how" className="section section--alt">
       <div className="section__inner" style={{ gap: 48 }}>
         <div className="section-head">
           <span className="eyebrow">{h.eyebrow}</span>
@@ -69,7 +69,7 @@ export function How({ t }: { t: Dict }) {
 export function Services({ t }: { t: Dict }) {
   const s = t.services;
   return (
-    <section id="services" className="section section--alt">
+    <section id="services" className="section">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{s.eyebrow}</span>
@@ -104,7 +104,7 @@ export function Services({ t }: { t: Dict }) {
 export function Dev({ t }: { t: Dict }) {
   const d = t.dev;
   return (
-    <section id="dev" className="section" style={{ overflow: "hidden" }}>
+    <section id="dev" className="section section--alt" style={{ overflow: "hidden" }}>
       <div className="dev__bgcode" aria-hidden="true" dir="ltr">&lt;/&gt;</div>
       <div className="section__inner">
         <div className="split">
@@ -149,7 +149,7 @@ export function Dev({ t }: { t: Dict }) {
 export function UxUi({ t }: { t: Dict }) {
   const u = t.ux;
   return (
-    <section id="ux" className="section section--alt">
+    <section id="ux" className="section">
       <div className="section__inner ux">
         <div className="ux__text">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -200,12 +200,14 @@ export function UxUi({ t }: { t: Dict }) {
 }
 
 /* ---------- المكتبة ---------- */
-const REEL_GLOW = [0.35, 0.28, 0.22, 0.3];
+const AR_NUM = "١٢٣٤٥٦٧٨٩";
 
 export function Library({ t }: { t: Dict }) {
   const l = t.library;
+  const ar = t.lang === "ar";
+  const tiktok = socials.find((s) => s.id === "tiktok")!.href;
   return (
-    <section id="library" className="section section--alt">
+    <section id="library" className="section">
       <div className="section__inner">
         <div className="lib-head">
           <div className="section-head">
@@ -213,20 +215,32 @@ export function Library({ t }: { t: Dict }) {
             <h2 className="h2">{l.title}</h2>
             <p className="lead">{l.lead}</p>
           </div>
-          {/* TODO: لما تجهز صفحات الحلقات، غيّر الروابط لـ /library */}
-          <a href={igUrl} target="_blank" rel="noopener noreferrer" className="btn btn--pill"
-            style={{ minHeight: 48, borderColor: "rgba(212,175,55,0.5)" }}>{l.all}</a>
+          <div className="lib-follow">
+            <span>{l.watchOn}</span>
+            <a href={igUrl} target="_blank" rel="noopener noreferrer" className="btn btn--pill">Instagram</a>
+            <a href={tiktok} target="_blank" rel="noopener noreferrer" className="btn btn--pill">TikTok</a>
+          </div>
         </div>
-        <div className="grid lib-grid">
-          {l.reels.map((r, i) => (
-            <a key={r.tag} href={igUrl} target="_blank" rel="noopener noreferrer" className="reel"
-              style={{ background: `linear-gradient(180deg, rgba(11,11,13,0) 30%, rgba(11,11,13,0.95)), radial-gradient(80% 60% at 50% 30%, rgba(212,175,55,${REEL_GLOW[i]}), #0e0e10 70%)` }}>
-              <span className="reel__tag">{r.tag}</span>
-              <span className="reel__title">{r.t}</span>
-              <span className="reel__file">{l.filePrefix} {r.file}</span>
-            </a>
-          ))}
-        </div>
+        <ol className="grid lib-series">
+          {l.series.map((sr, i) => {
+            const n = i + 1;
+            const num = ar ? (n === 10 ? "١٠" : AR_NUM[i]) : String(n);
+            return (
+              <li key={sr.t}>
+                <a href={igUrl} target="_blank" rel="noopener noreferrer"
+                  className={`lib-card${i === 0 ? " lib-card--first" : ""}`}>
+                  <span className="lib-card__num">{num}</span>
+                  <span className="lib-card__body">
+                    {i === 0 && <span className="lib-card__badge">{l.featured}</span>}
+                    <strong>{sr.t}</strong>
+                    <span>{sr.d}</span>
+                  </span>
+                  <span className="lib-card__eps">{l.episodes}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
@@ -236,7 +250,7 @@ export function Library({ t }: { t: Dict }) {
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
-    <section id="about" className="section">
+    <section id="about" className="section section--alt">
       <div className="section__inner about">
         <figure className="about__photo">
           <div className="about__frame">

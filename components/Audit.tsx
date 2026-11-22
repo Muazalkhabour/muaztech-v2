@@ -44,7 +44,7 @@ export function Audit({ lang }: { lang: Lang }) {
   const r = evaluate(a, answers);
 
   return (
-    <section id="audit" className="section section--alt">
+    <section id="audit" className="section">
       <div className="glow audit__glow" aria-hidden="true" />
       <div className="section__inner audit">
         <div className="audit__intro">

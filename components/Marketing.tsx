@@ -1,4 +1,7 @@
-import type { Dict } from "@/lib/dict";
+"use client";
+
+import { useState } from "react";
+import { dicts, type Lang } from "@/lib/dict";
 
 const ICONS: Record<string, React.ReactNode> = {
   strategy: (
@@ -55,8 +58,25 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function Marketing({ t }: { t: Dict }) {
-  const m = t.marketing;
+/** Which goals each service serves (keyed by its icon id). */
+const GOALS: Record<string, string[]> = {
+  strategy: ["trust", "leads"],
+  social: ["reach", "trust"],
+  meta: ["reach", "leads"],
+  google: ["reach", "leads"],
+  seo: ["reach", "trust"],
+  funnel: ["leads", "time"],
+  chart: ["measure"],
+  ai: ["time", "measure"],
+};
+
+const STEP_ICONS = [ICONS.social, ICONS.strategy, ICONS.funnel, ICONS.chart];
+
+export function Marketing({ lang }: { lang: Lang }) {
+  const m = dicts[lang].marketing;
+  const [goal, setGoal] = useState<string | null>(null);
+  const on = (icon: string) => !goal || GOALS[icon]?.includes(goal);
+
   return (
     <section id="marketing" className="section">
       <div className="glow marketing__glow" aria-hidden="true" />
@@ -67,9 +87,47 @@ export function Marketing({ t }: { t: Dict }) {
           <p className="lead">{m.lead}</p>
         </div>
 
+        {/* the system: attract → convince → convert → measure */}
+        <div className="mk-system">
+          <div className="mk-system__head">
+            <h3>{m.system.title}</h3>
+            <p>{m.system.lead}</p>
+          </div>
+          <ol className="mk-flow">
+            {m.system.steps.map((st, i) => (
+              <li key={st.t} className="mk-flow__step">
+                <span className="mk-flow__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
+                    strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{STEP_ICONS[i]}</svg>
+                </span>
+                <strong>{st.t}</strong>
+                <span>{st.d}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* goal picker */}
+        <div className="mk-goals">
+          <div className="mk-goals__head">
+            <strong>{m.goalTitle}</strong>
+            <span>{m.goalHint}</span>
+          </div>
+          <div className="mk-goals__chips" role="group" aria-label={m.goalTitle}>
+            <button type="button" aria-pressed={goal === null} className={`mk-goal${goal === null ? " is-on" : ""}`}
+              onClick={() => setGoal(null)}>{m.goalAll}</button>
+            {m.goals.map((g) => (
+              <button key={g.id} type="button" aria-pressed={goal === g.id}
+                className={`mk-goal${goal === g.id ? " is-on" : ""}`} onClick={() => setGoal(goal === g.id ? null : g.id)}>
+                {g.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <ul className="grid mk-grid">
           {m.items.map((it, i) => (
-            <li key={it.t} className="mk-card card">
+            <li key={it.t} className={`mk-card card${on(it.icon) ? (goal ? " is-match" : "") : " is-dim"}`}>
               <div className="mk-card__top">
                 <span className="mk-card__icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
@@ -90,6 +148,22 @@ export function Marketing({ t }: { t: Dict }) {
             </li>
           ))}
         </ul>
+
+        {/* what you get + industries */}
+        <div className="mk-extra">
+          <div className="mk-deliver card">
+            <h3>{m.deliverTitle}</h3>
+            <ul className="mk-card__points">
+              {m.deliver.map((d) => <li key={d}>{d}</li>)}
+            </ul>
+          </div>
+          <div className="mk-industries card">
+            <h3>{m.industriesTitle}</h3>
+            <ul className="mk-industries__list">
+              {m.industries.map((x) => <li key={x}>{x}</li>)}
+            </ul>
+          </div>
+        </div>
 
         <div className="mk-cta">
           <span>{m.ctaText}</span>

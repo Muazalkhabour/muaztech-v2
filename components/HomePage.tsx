@@ -28,14 +28,14 @@ export function HomePage({ t }: { t: Dict }) {
       <Nav lang={t.lang} />
       <main>
         <Hero t={t} />
+        <Marketing lang={t.lang} />
         <Leak t={t} />
-        <Marketing t={t} />
         <Audit lang={t.lang} />
         <How t={t} />
         <Services t={t} />
         <Dev t={t} />
         <UxUi t={t} />
-        <Projects t={t} />
+        <Projects lang={t.lang} />
         <Library t={t} />
         <About t={t} />
         <FinalCta t={t} />

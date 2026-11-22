@@ -1,11 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import type { Dict } from "@/lib/dict";
+import { dicts, type Dict, type Lang } from "@/lib/dict";
 import { waLink } from "@/lib/site";
 
 type ProjectId = keyof Dict["projects"]["items"];
 
 type ProjectMeta = {
   id: ProjectId;
+  kind: "systems" | "sites";
   tags: string[];
   shots?: [string, string];
   bg?: string;
@@ -16,6 +20,7 @@ type ProjectMeta = {
 const PROJECTS: ProjectMeta[] = [
   {
     id: "rehlati",
+    kind: "systems",
     tags: ["Next.js", "Prisma", "PostgreSQL", "React-PDF"],
     shots: ["/projects/rehlati-1.webp", "/projects/rehlati-2.webp"],
     bg: "radial-gradient(80% 70% at 50% 30%, rgba(212,175,55,0.22), #0e0e10 75%)",
@@ -23,6 +28,7 @@ const PROJECTS: ProjectMeta[] = [
   },
   {
     id: "aqari",
+    kind: "systems",
     tags: ["Next.js", "Supabase", "Prisma", "Leaflet"],
     shots: ["/projects/aqari-1.webp", "/projects/aqari-2.webp"],
     bg: "radial-gradient(80% 70% at 50% 30%, rgba(80,190,140,0.22), #0e0e10 75%)",
@@ -31,10 +37,12 @@ const PROJECTS: ProjectMeta[] = [
   },
   {
     id: "hms",
+    kind: "systems",
     tags: ["Next.js", "Supabase Auth", "Realtime", "React Query"],
   },
   {
     id: "chicken",
+    kind: "sites",
     tags: ["Next.js", "GA4", "Google Ads", "i18n"],
     shots: ["/projects/chicken-1.webp", "/projects/chicken-2.webp"],
     bg: "radial-gradient(80% 70% at 50% 30%, rgba(230,110,40,0.28), #0e0e10 75%)",
@@ -42,6 +50,7 @@ const PROJECTS: ProjectMeta[] = [
   },
   {
     id: "hayat",
+    kind: "sites",
     tags: ["HTML", "CSS", "JavaScript", "i18n"],
     shots: ["/projects/hayat-1.webp", "/projects/hayat-2.webp"],
     bg: "radial-gradient(80% 70% at 50% 30%, rgba(40,170,200,0.26), #0e0e10 75%)",
@@ -68,10 +77,12 @@ function CalendarMock({ label }: { label: string }) {
   );
 }
 
-export function Projects({ t }: { t: Dict }) {
-  const P = t.projects;
+export function Projects({ lang }: { lang: Lang }) {
+  const P = dicts[lang].projects;
+  const [kind, setKind] = useState<"all" | "systems" | "sites">("all");
+  const shown = PROJECTS.filter((m) => kind === "all" || m.kind === kind);
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section section--alt">
       <div className="section__inner">
         <div className="section-head">
           <span className="eyebrow">{P.eyebrow}</span>
@@ -79,8 +90,17 @@ export function Projects({ t }: { t: Dict }) {
           <p className="lead">{P.lead}</p>
         </div>
 
+        <div className="proj-filter" role="group" aria-label={P.eyebrow}>
+          {(["all", "systems", "sites"] as const).map((k) => (
+            <button key={k} type="button" aria-pressed={kind === k} className={`mk-goal${kind === k ? " is-on" : ""}`}
+              onClick={() => setKind(k)}>
+              {k === "all" ? P.filterAll : P.filters[k]}
+            </button>
+          ))}
+        </div>
+
         <div className="grid projects-grid">
-          {PROJECTS.map((m) => {
+          {shown.map((m) => {
             const p = P.items[m.id];
             return (
               <article key={m.id} className="project card">
