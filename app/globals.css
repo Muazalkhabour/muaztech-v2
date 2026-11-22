@@ -2043,14 +2043,14 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22360%22 height=%22360%22 viewBox=%220 0 360 360%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%221.6%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E %3Cg transform=%22translate%2828 34%29 rotate%28-8%29%22%3E%3Cpath d=%22M10 6 2 14l8 8M24 6l8 8-8 8M19 2l-4 24%22/%3E%3C/g%3E %3Cg transform=%22translate%28150 22%29%22%3E%3Cpath d=%22M2 26h28M6 26V16M14 26V8M22 26V12M30 26V4%22/%3E%3C/g%3E %3Cg transform=%22translate%28280 48%29 rotate%2810%29%22%3E%3Ccircle cx=%2214%22 cy=%2214%22 r=%2212%22/%3E%3Ccircle cx=%2214%22 cy=%2214%22 r=%226%22/%3E%3Ccircle cx=%2214%22 cy=%2214%22 r=%221.5%22/%3E%3C/g%3E %3Cg transform=%22translate%2870 140%29 rotate%286%29%22%3E%3Cpath d=%22M3 12v6a1 1 0 0 0 1 1h3l9 6V5L7 11H4a1 1 0 0 0-1 1z%22/%3E%3Cpath d=%22M22 10a6 6 0 0 1 0 10%22/%3E%3C/g%3E %3Cg transform=%22translate%28200 120%29 rotate%28-6%29%22%3E%3Cpath d=%22M8 3C4 3 4 7 4 9s-2 3-2 3 2 1 2 3 0 6 4 6M20 3c4 0 4 4 4 6s2 3 2 3-2 1-2 3 0 6-4 6%22/%3E%3C/g%3E %3Cg transform=%22translate%28300 170%29%22%3E%3Cpath d=%22M4 2l18 9-8 2-3 8z%22/%3E%3C/g%3E %3Cg transform=%22translate%2824 260%29 rotate%28-10%29%22%3E%3Cpath d=%22M10 2 7 26M21 2l-3 24M3 9h24M2 19h24%22/%3E%3C/g%3E %3Cg transform=%22translate%28130 250%29%22%3E%3Cpath d=%22M2 22l8-8 6 6 12-12M22 8h6v6%22/%3E%3C/g%3E %3Cg transform=%22translate%28250 270%29 rotate%288%29%22%3E%3Ccircle cx=%2214%22 cy=%2214%22 r=%225%22/%3E%3Cpath d=%22M19 14v2a4 4 0 0 0 8 0v-2a13 13 0 1 0-5 10%22/%3E%3C/g%3E %3C/svg%3E");
   background-size: 360px 360px;
-  opacity: 0.07;
-  -webkit-mask-image: radial-gradient(120% 90% at 50% 50%, #000 40%, transparent 100%);
-  mask-image: radial-gradient(120% 90% at 50% 50%, #000 40%, transparent 100%);
+  opacity: 0.13;
+  -webkit-mask-image: radial-gradient(140% 100% at 50% 50%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(140% 100% at 50% 50%, #000 60%, transparent 100%);
 }
 .section > * { position: relative; z-index: 1; }
 .section > .glow, .section > .dev__bgcode { position: absolute; }
 @media (max-width: 640px) {
-  .section::before { background-size: 280px 280px; opacity: 0.06; }
+  .section::before { background-size: 280px 280px; opacity: 0.12; }
 }
 /* cards are opaque so the pattern only shows in the gaps, never behind text */
 .card { background-color: #141417; }
