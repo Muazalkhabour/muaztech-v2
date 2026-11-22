@@ -261,7 +261,7 @@ img {
 .nav__icon,
 .nav__sheet-foot { display: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav { flex-wrap: wrap; }
   .nav__toggle { display: inline-flex; }
   .nav__links,
@@ -1599,7 +1599,7 @@ html[dir="ltr"] .audit__glow {
 .nav__links { order: 1; }
 .nav__cta { order: 3; }
 .nav__toggle { order: 4; }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .lang-switch { order: 1; margin-inline-start: auto; }
   .nav__toggle { order: 2; margin-inline-start: 0; }
   .nav__links { order: 3; }
@@ -2311,6 +2311,12 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
 .lib-soon2 .h2 { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; }
 .lib-soon2__badge { padding: 4px 14px; border-radius: 999px; background: var(--gold-grad); color: var(--bg-2); font-size: 0.5em; font-weight: 700; line-height: 1.6; }
 .lib-soon2 .lib-follow { justify-content: center; margin-top: 4px; }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav-wrap.is-open .nav__sheet-foot { order: 5; }
+}
+/* mid-size screens: keep the six links on one line */
+@media (min-width: 1001px) and (max-width: 1240px) {
+  .nav { gap: 16px 18px; }
+  .nav__links { gap: 8px 16px; font-size: 14px; }
+  .nav__cta { padding: 0 14px; font-size: 14px; }
 }
