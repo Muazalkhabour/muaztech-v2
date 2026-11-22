@@ -2242,3 +2242,8 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
   .lib-series .lib-card__soon,
   .lib-series .lib-card__eps { position: absolute; top: 18px; inset-inline-end: 16px; }
 }
+
+.lib-soon2 { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; max-width: 720px; margin: 0 auto; }
+.lib-soon2 .h2 { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; }
+.lib-soon2__badge { padding: 4px 14px; border-radius: 999px; background: var(--gold-grad); color: var(--bg-2); font-size: 0.5em; font-weight: 700; line-height: 1.6; }
+.lib-soon2 .lib-follow { justify-content: center; margin-top: 4px; }

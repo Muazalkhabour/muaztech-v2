@@ -326,6 +326,7 @@ const ar = {
     featured: "بلّش من هون",
     soonBadge: "قريباً",
     soonTitle: "السلاسل عم تجهز",
+    soonLead: "دروس قصيرة بلغة بسيطة، ومع كل درس ملف مجاني. تابعني لتوصلك أول ما تنزل.",
     soonText: "تابعني عالإنستغرام والتيك توك لتوصلك أول حلقة أول ما تنزل.",
     series: [
       { t: "خريطة التسويق الرقمي", d: "الصورة الكاملة قبل أي أداة" },
@@ -747,6 +748,7 @@ const en: Dict = {
     featured: "Start here",
     soonBadge: "Coming soon",
     soonTitle: "The series are on the way",
+    soonLead: "Short lessons in plain language, each with a free file. Follow me to catch them the moment they drop.",
     soonText: "Follow me on Instagram and TikTok to catch the first episode the moment it drops.",
     series: [
       { t: "The Digital Marketing Map", d: "The full picture before any tool" },
