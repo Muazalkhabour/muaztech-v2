@@ -101,7 +101,7 @@ export function Nav({ lang }: { lang: Lang }) {
   return (
     <header className={`nav-wrap${open ? " is-open" : ""}`}>
       <nav aria-label={n.aria} className="nav">
-        <a href="#top" aria-label={n.home} onClick={close}>
+        <a href="#top" aria-label={n.home} onClick={close} className="brand-capsule">
           <Brand />
         </a>
         <a href={n.switchHref} hrefLang={n.switchLang} lang={n.switchLang} className="lang-switch"

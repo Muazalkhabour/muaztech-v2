@@ -34,7 +34,15 @@ export function buildMetadata(lang: Lang): Metadata {
       images: [{ url: m.ogImage, width: 1200, height: 630, alt: m.ogAlt }],
     },
     twitter: { card: "summary_large_image", title: m.title, description: m.description, images: [m.ogImage] },
-    icons: { icon: "/icon.svg" },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+        { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    appleWebApp: { title: site.name, statusBarStyle: "black-translucent" },
   };
 }
 
