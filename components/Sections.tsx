@@ -267,10 +267,6 @@ export function About({ t }: { t: Dict }) {
               </div>
             ))}
           </div>
-          <div className="about__social">
-            <span>{t.social.follow}</span>
-            <SocialLinks t={t} size="lg" />
-          </div>
         </div>
       </div>
     </section>
