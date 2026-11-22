@@ -2028,3 +2028,8 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
   font-weight: 700;
   color: var(--white);
 }
+@media (max-width: 640px) {
+  .social { gap: 8px; }
+  .social--lg a { width: 44px; height: 44px; border-radius: 12px; }
+  .social--lg svg { width: 20px; height: 20px; }
+}

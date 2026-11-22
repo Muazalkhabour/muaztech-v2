@@ -302,6 +302,8 @@ const ar = {
     follow: "تابعني",
     labels: {
       instagram: "إنستغرام MUAZ TECH",
+      tiktok: "تيك توك MUAZ TECH",
+      snapchat: "سناب شات",
       facebook: "فيسبوك",
       github: "GitHub: مشاريعي البرمجية",
       whatsapp: "واتساب",
@@ -678,6 +680,8 @@ const en: Dict = {
     follow: "Follow me",
     labels: {
       instagram: "MUAZ TECH on Instagram",
+      tiktok: "MUAZ TECH on TikTok",
+      snapchat: "Snapchat",
       facebook: "Facebook",
       github: "GitHub: my code",
       whatsapp: "WhatsApp",
