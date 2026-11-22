@@ -6,7 +6,7 @@ import { waLink } from "@/lib/site";
 import { Brand } from "./Brand";
 import { SocialLinks } from "./Social";
 import { ServiceIcon } from "./ServiceIcon";
-import { services, serviceHref, serviceUi } from "@/lib/services";
+import { servicesIn, serviceHref, serviceUi } from "@/lib/services";
 
 const ICONS: Record<string, React.ReactNode> = {
   megaphone: (
@@ -63,7 +63,7 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
   const n = t.nav;
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
-  const [svcOpen, setSvcOpen] = useState(false);
+  const [svcOpen, setSvcOpen] = useState<string | null>(null);
   const close = () => setOpen(false);
 
   // close the sheet first, then scroll once the header is back in the page flow
@@ -81,7 +81,7 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
 
   // lock page scroll + Escape to close while the mobile menu is open
   useEffect(() => {
-    if (!open) { setSvcOpen(false); return; }
+    if (!open) { setSvcOpen(null); return; }
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -133,41 +133,45 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
         </button>
         <div id="nav-links" className="nav__links">
           {n.links.map((l, i) => {
+            const group = "menu" in l ? (l.menu as "marketing" | "dev") : null;
             const link = (
               <a key={l.href} href={h(l.href)} onClick={go}
-                className={`${active === l.href.slice(1) ? "is-active" : ""}${"menu" in l && l.menu ? " nav__dd-trigger" : ""}`}
+                className={`${active === l.href.slice(1) ? "is-active" : ""}${group ? " nav__dd-trigger" : ""}`}
                 aria-current={active === l.href.slice(1) ? "true" : undefined}
-                aria-haspopup={"menu" in l && l.menu ? "true" : undefined}
+                aria-haspopup={group ? "true" : undefined}
                 style={{ "--i": i } as React.CSSProperties}>
                 <span className="nav__icon" aria-hidden="true">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
                     strokeLinecap="round" strokeLinejoin="round">{ICONS[l.icon]}</svg>
                 </span>
                 {l.label}
-                {"menu" in l && l.menu && (
+                {group && (
                   <svg className="nav__caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
                 )}
               </a>
             );
-            if (!("menu" in l && l.menu)) return link;
+            if (!group) return link;
+            const isOpen = svcOpen === group;
+            const items = servicesIn(group);
+            const panelId = `nav-svc-${group}`;
             return (
-              <div key={l.href} className={`nav__dd${svcOpen ? " is-svc-open" : ""}`} style={{ "--i": i } as React.CSSProperties}>
+              <div key={l.href} className={`nav__dd nav__dd--${group}${isOpen ? " is-svc-open" : ""}`} style={{ "--i": i } as React.CSSProperties}>
                 {link}
                 {/* phones: a collapsed toggle instead of the plain link */}
-                <button type="button" className="nav__dd-toggle" aria-expanded={svcOpen} aria-controls="nav-svc-panel"
-                  onClick={() => setSvcOpen((o) => !o)}>
+                <button type="button" className="nav__dd-toggle" aria-expanded={isOpen} aria-controls={panelId}
+                  onClick={() => setSvcOpen(isOpen ? null : group)}>
                   <span className="nav__icon" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
                       strokeLinecap="round" strokeLinejoin="round">{ICONS[l.icon]}</svg>
                   </span>
-                  <span className="nav__dd-toggle-label">{n.servicesMobile}</span>
+                  <span className="nav__dd-toggle-label">{group === "marketing" ? serviceUi[lang].marketingGroup : serviceUi[lang].devGroup}</span>
                   <svg className="nav__dd-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
                 </button>
-                <div className="nav__dd-panel" id="nav-svc-panel">
+                <div className="nav__dd-panel" id={panelId}>
                   <ul>
-                    {services.map((s) => (
+                    {items.map((s) => (
                       <li key={s.slug}>
                         <a href={serviceHref(lang, s.slug)} onClick={close} className="nav__svc">
                           <span className="nav__svc-icon"><ServiceIcon name={s.icon} size={18} /></span>
@@ -179,7 +183,9 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
                       </li>
                     ))}
                   </ul>
-                  <a href={h("#marketing")} onClick={go} className="nav__dd-all">{serviceUi[lang].allMarketing} {t.arrow}</a>
+                  <a href={h(l.href)} onClick={go} className="nav__dd-all">
+                    {group === "marketing" ? serviceUi[lang].allMarketing : serviceUi[lang].allDev} {t.arrow}
+                  </a>
                 </div>
               </div>
             );

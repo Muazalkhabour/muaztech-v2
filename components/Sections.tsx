@@ -3,7 +3,7 @@ import type { Dict } from "@/lib/dict";
 import { site, socials, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
 import { SocialLinks } from "./Social";
-import { services, serviceHref, serviceUi } from "@/lib/services";
+import { servicesIn, serviceHref, serviceUi } from "@/lib/services";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const igUrl = `https://instagram.com/${site.instagram}`;
@@ -345,12 +345,16 @@ export function FinalCta({ t }: { t: Dict }) {
           className="btn btn--gold" style={{ padding: "0 36px" }}>{f.button}</a>
       </div>
       <nav className="foot-svcs" aria-label={serviceUi[t.lang].services}>
-        <strong>{serviceUi[t.lang].services}</strong>
-        <ul>
-          {services.map((s) => (
-            <li key={s.slug}><a href={serviceHref(t.lang, s.slug)}>{s.copy[t.lang].nav}</a></li>
-          ))}
-        </ul>
+        {(["marketing", "dev"] as const).map((g) => (
+          <div key={g} className="foot-svcs__group">
+            <strong>{g === "marketing" ? serviceUi[t.lang].marketingGroup : serviceUi[t.lang].devGroup}</strong>
+            <ul>
+              {servicesIn(g).map((s) => (
+                <li key={s.slug}><a href={serviceHref(t.lang, s.slug)}>{s.copy[t.lang].nav}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </nav>
       <footer className="footer">
         <Brand size={18} />

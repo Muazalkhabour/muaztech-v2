@@ -4,7 +4,10 @@ import { useState } from "react";
 import { dicts, type Lang } from "@/lib/dict";
 import { serviceHref, serviceUi } from "@/lib/services";
 
-const PAGE: Record<string, string> = { social: "social-media", meta: "meta-ads", google: "google-ads", seo: "seo" };
+const PAGE: Record<string, string> = {
+  strategy: "marketing-strategy", social: "social-media", meta: "meta-ads", google: "google-ads", seo: "seo",
+  funnel: "whatsapp-sales", chart: "tracking-analytics", ai: "ai-automation",
+};
 
 const ICONS: Record<string, React.ReactNode> = {
   strategy: (

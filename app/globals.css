@@ -261,7 +261,7 @@ img {
 .nav__icon,
 .nav__sheet-foot { display: none; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .nav { flex-wrap: wrap; }
   .nav__toggle { display: inline-flex; }
   .nav__links,
@@ -1598,7 +1598,7 @@ html[dir="ltr"] .audit__glow {
 .nav__links { order: 1; }
 .nav__cta { order: 3; }
 .nav__toggle { order: 4; }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .lang-switch { order: 1; margin-inline-start: auto; }
   .nav__toggle { order: 2; margin-inline-start: 0; }
   .nav__links { order: 3; }
@@ -2310,11 +2310,11 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
 .lib-soon2 .h2 { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; }
 .lib-soon2__badge { padding: 4px 14px; border-radius: 999px; background: var(--gold-grad); color: var(--bg-2); font-size: 0.5em; font-weight: 700; line-height: 1.6; }
 .lib-soon2 .lib-follow { justify-content: center; margin-top: 4px; }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .nav-wrap.is-open .nav__sheet-foot { order: 5; }
 }
 /* mid-size screens: keep the six links on one line */
-@media (min-width: 1001px) and (max-width: 1240px) {
+@media (min-width: 1101px) and (max-width: 1240px) {
   .nav { gap: 16px 18px; }
   .nav__links { gap: 8px 16px; font-size: 14px; }
   .nav__cta { padding: 0 14px; font-size: 14px; }
@@ -2509,7 +2509,7 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
 .nav__links .nav__dd-all::after, .nav__links .nav__svc::after { display: none; }
 
 /* mobile sheet: services listed open under the first item */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .nav-wrap.is-open .nav__dd { display: flex; flex-direction: column; gap: 6px; animation: navIn 0.28s ease-out both; }
   .nav-wrap.is-open .nav__dd > a { animation: none; }
   .nav__caret { display: none; }
@@ -2567,7 +2567,7 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
 
 /* phones: services as a collapsed accordion */
 .nav__dd-toggle { display: none; }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .nav-wrap.is-open .nav__dd > a.nav__dd-trigger { display: none; }
   .nav-wrap.is-open .nav__dd-toggle {
     display: flex;
@@ -2598,4 +2598,14 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
   .nav__dd.is-svc-open .nav__dd-toggle { background: linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.04)), #121215; }
   .nav-wrap.is-open .nav__dd:not(.is-svc-open) .nav__dd-panel { display: none; }
   .nav-wrap.is-open .nav__dd.is-svc-open .nav__dd-panel { animation: navIn 0.22s ease-out both; }
+}
+
+/* two service groups */
+.nav__dd--dev .nav__dd-panel { width: 320px; }
+.nav__dd--dev .nav__dd-panel ul { grid-template-columns: 1fr; }
+.foot-svcs { gap: 18px; }
+.foot-svcs__group { display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 640px) { .foot-svcs__group { align-items: center; } }
+@media (max-width: 1100px) {
+  .nav-wrap.is-open .nav__dd--dev .nav__dd-panel ul { grid-template-columns: 1fr 1fr; }
 }

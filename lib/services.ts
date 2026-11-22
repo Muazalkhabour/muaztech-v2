@@ -29,7 +29,9 @@ export type ServiceCopy = {
 
 export type Service = {
   slug: string;
-  icon: "social" | "meta" | "google" | "seo" | "code" | "ux";
+  icon: "social" | "meta" | "google" | "seo" | "code" | "ux" | "strategy" | "funnel" | "chart" | "ai";
+  /** menu group */
+  group: "marketing" | "dev";
   tags: string[];
   /** home-page section this service belongs to */
   home: "#marketing" | "#dev" | "#ux";
@@ -39,6 +41,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "social-media",
+    group: "marketing",
     icon: "social",
     tags: ["Instagram", "TikTok", "Facebook", "Reels"],
     home: "#marketing",
@@ -129,6 +132,7 @@ export const services: Service[] = [
   },
   {
     slug: "meta-ads",
+    group: "marketing",
     icon: "meta",
     tags: ["Meta Ads", "Pixel", "Conversions API", "A/B testing"],
     home: "#marketing",
@@ -221,6 +225,7 @@ export const services: Service[] = [
   },
   {
     slug: "google-ads",
+    group: "marketing",
     icon: "google",
     tags: ["Google Ads", "Search", "Maps", "YouTube"],
     home: "#marketing",
@@ -311,6 +316,7 @@ export const services: Service[] = [
   },
   {
     slug: "seo",
+    group: "marketing",
     icon: "seo",
     tags: ["SEO", "Local SEO", "Google Business", "Reviews"],
     home: "#marketing",
@@ -400,7 +406,372 @@ export const services: Service[] = [
     },
   },
   {
+    slug: "marketing-strategy",
+    group: "marketing",
+    icon: "strategy",
+    tags: ["Research", "Positioning", "Offer", "90-day plan"],
+    home: "#marketing",
+    copy: {
+      ar: {
+        short: "خطة واضحة قبل أي إعلان",
+        nav: "استراتيجية وخطة تسويق",
+        metaTitle: "استراتيجية تسويق رقمي وخطة ٩٠ يوم | MUAZ TECH",
+        metaDesc: "قبل ما تصرف عالإعلانات: تحليل الجمهور والمنافسين، رسالة وعرض بيميّزوك، وخطة تسويق ٩٠ يوم بأولويات وأرقام بتنقاس.",
+        eyebrow: "استراتيجية وخطة تسويق",
+        title: ["قبل أي إعلان… ", "لازم تعرف لوين رايح"],
+        intro: "أغلب المصاري اللي بتنحرق بالتسويق سببها إنه ما في خطة: كل شهر شي جديد، وما حدا بيعرف شو اشتغل. بنبنيلك خريطة واضحة: مين زبونك، شو بدك تقلّه، ووين بتلاقيه.",
+        forTitle: "هالخدمة إلك إذا:",
+        forWho: [
+          "عم تجرّب كل شي وما بتعرف شو اللي عم يشتغل",
+          "مشروعك جديد وبدك تبلّش صح",
+          "زبونك مش واضح، أو عم تبيع للكل",
+          "منافسينك أرخص أو أشطر بالتسويق",
+        ],
+        getTitle: "شو بتستلم",
+        get: [
+          "تحليل لجمهورك: مين هو، شو بيوجعه، وكيف بيقرر",
+          "دراسة للمنافسين: شو عم يعملوا ووين الفرصة",
+          "رسالة وعرض بيميّزوك عن غيرك",
+          "خطة ٩٠ يوم بقنوات وأولويات واضحة",
+          "أهداف بتنقاس، وطريقة متابعتها كل أسبوع",
+        ],
+        stepsTitle: "كيف منشتغل",
+        steps: [
+          { t: "جلسة فهم", d: "منحكي عن مشروعك، أرقامك، وهدفك الحقيقي." },
+          { t: "بحث", d: "جمهورك، منافسينك، ووين عم تضيع الفرص." },
+          { t: "الرسالة والعرض", d: "شو بتقول، لمين، وليش لازم يختارك." },
+          { t: "خطة ٩٠ يوم", d: "شو منعمل أول، وشو بعدين، وكيف منقيس." },
+        ],
+        faqTitle: "أسئلة عن الاستراتيجية",
+        faqs: [
+          { q: "ليش ما منبلّش دغري بالإعلانات؟", a: "لأنه الإعلان بيكبّر اللي موجود. إذا الرسالة أو العرض مش واضحين، الإعلان بيكبّر المشكلة وبيحرق مصاري أسرع." },
+          { q: "بتنفّذوا الخطة كمان؟", a: "إيه، فيني نفّذها معك أو مع فريقك. وإذا بدك تنفّذها لحالك، الخطة مكتوبة بطريقة واضحة لتمشي عليها." },
+          { q: "الخطة بتنفع لمشروع صغير؟", a: "بالعكس، المشاريع الصغيرة أحوج لخطة لأنه ميزانيتها محدودة وما فيها تجرّب كل شي." },
+        ],
+        ctaTitle: "خلّينا نرسم خريطتك",
+        ctaText: "قلّي شو مشروعك وشو هدفك هالسنة، وبقلّك من وين منبلّش.",
+        ctaBtn: "بدي خطة لمشروعي",
+        waMsg: "أهلين معاذ، بدي خطة تسويق لمشروعي وحابب نحكي.",
+      },
+      en: {
+        short: "A clear plan before any ad",
+        nav: "Marketing Strategy & Plan",
+        metaTitle: "Digital Marketing Strategy & 90-Day Plan | MUAZ TECH",
+        metaDesc: "Before you spend on ads: audience and competitor research, a message and offer that set you apart, and a 90-day marketing plan with measurable priorities.",
+        eyebrow: "Marketing strategy & plan",
+        title: ["Before any ad… ", "know where you're going"],
+        intro: "Most wasted marketing money comes from having no plan: something new every month, and nobody knows what worked. I build you a clear map: who your customer is, what to tell them, and where to find them.",
+        forTitle: "This is for you if:",
+        forWho: [
+          "You're trying everything and don't know what works",
+          "Your business is new and you want to start right",
+          "Your customer isn't clear, or you sell to everyone",
+          "Competitors are cheaper or better at marketing",
+        ],
+        getTitle: "What you get",
+        get: [
+          "Audience analysis: who they are, what they need, how they decide",
+          "Competitor research: what they do and where the opening is",
+          "A message and offer that set you apart",
+          "A 90-day plan with clear channels and priorities",
+          "Measurable goals and a weekly way to track them",
+        ],
+        stepsTitle: "How we work",
+        steps: [
+          { t: "Discovery call", d: "Your business, your numbers, and your real goal." },
+          { t: "Research", d: "Your audience, competitors, and missed opportunities." },
+          { t: "Message & offer", d: "What you say, to whom, and why they should pick you." },
+          { t: "90-day plan", d: "What comes first, what's next, and how we measure." },
+        ],
+        faqTitle: "Strategy questions",
+        faqs: [
+          { q: "Why not start with ads right away?", a: "Because ads amplify what's already there. If the message or offer isn't clear, ads amplify the problem and burn money faster." },
+          { q: "Do you also execute the plan?", a: "Yes, I can execute it with you or your team. And if you'd rather do it yourself, the plan is written clearly enough to follow." },
+          { q: "Is a plan worth it for a small business?", a: "Even more so: small businesses have limited budgets and can't afford to try everything." },
+        ],
+        ctaTitle: "Let's draw your map",
+        ctaText: "Tell me about your business and this year's goal, and I'll tell you where to start.",
+        ctaBtn: "I want a plan",
+        waMsg: "Hi Muaz, I'd like a marketing plan for my business.",
+      },
+    },
+  },
+  {
+    slug: "whatsapp-sales",
+    group: "marketing",
+    icon: "funnel",
+    tags: ["WhatsApp Business", "CRM", "Follow-up", "Sales funnel"],
+    home: "#marketing",
+    copy: {
+      ar: {
+        short: "من رسالة… لزبون",
+        nav: "مسار البيع والواتساب",
+        metaTitle: "مسار البيع وإدارة الواتساب للمشاريع | MUAZ TECH",
+        metaDesc: "رتّب الواتساب ومسار البيع لحتى ما يضيع ولا زبون: ردود جاهزة، تصنيف للزبائن، متابعة بعد الرسالة وبعد الشراء، وربط مع نظام زبائن.",
+        eyebrow: "مسار البيع والواتساب",
+        title: ["الزبون بعت رسالة… ", "وبعدين؟"],
+        intro: "كتير مشاريع بتدفع لتجيب رسائل، وبعدين الرسائل بتضيع: رد متأخر، سؤال ما انجاوب، وما حدا تابع. منرتّبلك الطريق من أول رسالة لحد البيعة، وبعدها كمان.",
+        forTitle: "هالخدمة إلك إذا:",
+        forWho: [
+          "بتجيك رسائل كتير بس قليل منها بيشتري",
+          "الرد بياخد ساعات، أو بينسى",
+          "ما في متابعة للي سأل وما اشترى",
+          "ما بتعرف قديش زبون إجاك من كل حملة",
+        ],
+        getTitle: "شو بتستلم",
+        get: [
+          "WhatsApp Business مرتّب: ملف، كتالوج، وردود سريعة",
+          "سكربت رد بيسأل الأسئلة الصح وبيوصل للعرض",
+          "تصنيف الزبائن (جديد، مهتم، اشترى) لتعرف مين تتابع",
+          "رسائل متابعة لبعد الرسالة وبعد الشراء",
+          "ربط مع نظام زبائن (CRM) أو جدول بسيط",
+        ],
+        stepsTitle: "كيف منشتغل",
+        steps: [
+          { t: "منسمع للرسائل", d: "منشوف المحادثات الحقيقية ووين الزبون بيوقف." },
+          { t: "منرتّب", d: "ردود، تصنيف، وعرض واضح." },
+          { t: "منتابع", d: "رسائل متابعة بأوقات مدروسة." },
+          { t: "منقيس", d: "قديش رسالة صارت بيعة، ومن أي مصدر." },
+        ],
+        faqTitle: "أسئلة عن مسار البيع",
+        faqs: [
+          { q: "بدي رد آلي كامل؟", a: "مش دايماً. الرد الآلي ممتاز للأسئلة المكررة، بس البيع غالباً بيحتاج إنسان. منختار التوازن المناسب لمشروعك." },
+          { q: "شو هو الـ CRM؟", a: "مكان واحد فيه كل زبائنك ومحادثاتهم وشو صار معهم، بدل ما يضيعوا بين الرسائل والدفاتر." },
+          { q: "بيشتغل مع إنستغرام كمان؟", a: "إيه، نفس الفكرة بتنطبق على رسائل إنستغرام وفيسبوك، ومنقدر نجمعهن بمكان واحد." },
+        ],
+        ctaTitle: "ولا زبون يضيع بين الرسائل",
+        ctaText: "قلّي كيف عم تردّ هلق على الرسائل، وبقلّك وين عم يضيع الزبون.",
+        ctaBtn: "رتّبلي الواتساب",
+        waMsg: "أهلين معاذ، بدي رتّب الواتساب ومسار البيع عندي.",
+      },
+      en: {
+        short: "From message… to customer",
+        nav: "Sales Funnel & WhatsApp",
+        metaTitle: "Sales Funnel & WhatsApp Business Setup | MUAZ TECH",
+        metaDesc: "Set up WhatsApp and your sales funnel so no lead gets lost: quick replies, lead labels, follow-up after the message and after purchase, and a CRM connection.",
+        eyebrow: "Sales funnel & WhatsApp",
+        title: ["A customer sent a message… ", "now what?"],
+        intro: "Many businesses pay to get messages, then the messages get lost: a late reply, an unanswered question, and no follow-up. I set up the path from the first message to the sale, and beyond.",
+        forTitle: "This is for you if:",
+        forWho: [
+          "You get lots of messages, but few buy",
+          "Replies take hours, or get forgotten",
+          "Nobody follows up with people who asked but didn't buy",
+          "You don't know how many customers each campaign brought",
+        ],
+        getTitle: "What you get",
+        get: [
+          "An organized WhatsApp Business: profile, catalog, quick replies",
+          "A reply script that asks the right questions and leads to the offer",
+          "Lead labels (new, interested, bought) so you know who to follow up",
+          "Follow-up messages after the inquiry and after purchase",
+          "A CRM or simple sheet connection",
+        ],
+        stepsTitle: "How we work",
+        steps: [
+          { t: "Listen", d: "We review real conversations and where customers drop off." },
+          { t: "Organize", d: "Replies, labels, and a clear offer." },
+          { t: "Follow up", d: "Follow-up messages at the right moments." },
+          { t: "Measure", d: "How many messages became sales, and from which source." },
+        ],
+        faqTitle: "Sales funnel questions",
+        faqs: [
+          { q: "Do I need a full chatbot?", a: "Not always. Automation is great for repeated questions, but selling usually needs a human. We pick the right balance for your business." },
+          { q: "What is a CRM?", a: "One place with all your customers, their conversations, and what happened with them, instead of losing them across chats and notebooks." },
+          { q: "Does it work with Instagram too?", a: "Yes, the same idea applies to Instagram and Facebook messages, and we can bring them into one place." },
+        ],
+        ctaTitle: "No customer lost in the inbox",
+        ctaText: "Tell me how you reply to messages today, and I'll show you where customers slip away.",
+        ctaBtn: "Organize my WhatsApp",
+        waMsg: "Hi Muaz, I'd like to organize my WhatsApp and sales funnel.",
+      },
+    },
+  },
+  {
+    slug: "tracking-analytics",
+    group: "marketing",
+    icon: "chart",
+    tags: ["GA4", "GTM", "Pixel + CAPI", "Looker Studio"],
+    home: "#marketing",
+    copy: {
+      ar: {
+        short: "اعرف كل زبون من وين إجا",
+        nav: "التتبّع والتقارير",
+        metaTitle: "تتبّع وتحليلات GA4 وتقارير تسويق | MUAZ TECH",
+        metaDesc: "إعداد GA4 وGoogle Tag Manager وPixel مع Conversions API، لوحة أرقام بسيطة، وتقرير أسبوعي بصفحة وحدة و٣ قرارات واضحة.",
+        eyebrow: "التتبّع والتقارير",
+        title: ["أرقامك عم تحكي… ", "بس مين عم يسمع؟"],
+        intro: "إذا ما بتعرف كل زبون من وين إجا وقديش كلّفك، فإنت عم تسوّق بالعتمة. منركّبلك التتبّع صح، ومنحوّل الأرقام لتقرير بتفهمه وبتاخد منه قرار.",
+        forTitle: "هالخدمة إلك إذا:",
+        forWho: [
+          "ما بتعرف أي منصة عم تجيبلك زبائن",
+          "أرقام الإعلانات ما بتطابق اللي عم تشوفه",
+          "التقارير اللي بتوصلك معقدة وما بتفهمها",
+          "بدك تاخد قرارات على أرقام، مش على إحساس",
+        ],
+        getTitle: "شو بتستلم",
+        get: [
+          "إعداد GA4 وGoogle Tag Manager",
+          "Pixel وConversions API مضبوطين",
+          "تتبّع الأحداث المهمة: رسالة، اتصال، طلب، شراء",
+          "لوحة أرقام بسيطة بتفتحها من موبايلك",
+          "تقرير أسبوعي بصفحة وحدة و٣ قرارات",
+        ],
+        stepsTitle: "كيف منشتغل",
+        steps: [
+          { t: "فحص القياس", d: "شو مركّب هلق، وشو غلط أو ناقص." },
+          { t: "خطة الأحداث", d: "شو لازم ينعدّ ليعطينا صورة صح." },
+          { t: "تركيب وتجربة", d: "منركّب ومنتأكد إنه كل حدث بيوصل." },
+          { t: "تقرير", d: "لوحة أرقام وتقرير أسبوعي بقرارات." },
+        ],
+        faqTitle: "أسئلة عن التتبّع",
+        faqs: [
+          { q: "ليش أرقام ميتا مش متل أرقام موقعي؟", a: "لأنه كل منصة بتقيس بطريقة، وجزء من أرقام الإعلانات تقدير. التتبّع الصح بيقرّب الأرقام وبيخلّيك تعرف شو تصدّق." },
+          { q: "شو هو GTM؟", a: "أداة بتخلّينا نركّب ونعدّل أكواد التتبّع من مكان واحد، بلا ما نلمس كود الموقع كل مرة." },
+          { q: "بقدر شوف الأرقام لحالي؟", a: "أكيد، بتاخد لوحة أرقام بتفتحها وقت ما بدك، والحسابات كلها باسمك." },
+        ],
+        ctaTitle: "خلّي قراراتك على أرقام",
+        ctaText: "ابعتلي شو أدوات القياس اللي عندك هلق، وبقلّك شو ناقص.",
+        ctaBtn: "افحصلي القياس",
+        waMsg: "أهلين معاذ، بدي تفحصلي التتبّع والتقارير عندي.",
+      },
+      en: {
+        short: "Know where every customer came from",
+        nav: "Tracking & Reporting",
+        metaTitle: "GA4 Tracking, Analytics & Marketing Reports | MUAZ TECH",
+        metaDesc: "GA4, Google Tag Manager, and Pixel with Conversions API set up properly, a simple metrics dashboard, and a one-page weekly report with 3 clear decisions.",
+        eyebrow: "Tracking & reporting",
+        title: ["Your numbers are talking… ", "is anyone listening?"],
+        intro: "If you don't know where each customer came from and what they cost, you're marketing in the dark. I set up tracking properly and turn the numbers into a report you understand and can act on.",
+        forTitle: "This is for you if:",
+        forWho: [
+          "You don't know which platform brings you customers",
+          "Ad numbers don't match what you actually see",
+          "The reports you get are complicated and unclear",
+          "You want decisions based on numbers, not gut feeling",
+        ],
+        getTitle: "What you get",
+        get: [
+          "GA4 and Google Tag Manager setup",
+          "Pixel and Conversions API configured properly",
+          "Key events tracked: message, call, order, purchase",
+          "A simple dashboard you can open on your phone",
+          "A one-page weekly report with 3 decisions",
+        ],
+        stepsTitle: "How we work",
+        steps: [
+          { t: "Tracking audit", d: "What's installed now, and what's wrong or missing." },
+          { t: "Event plan", d: "What should be counted to get a true picture." },
+          { t: "Install & test", d: "We set it up and confirm every event arrives." },
+          { t: "Report", d: "A dashboard and a weekly report with decisions." },
+        ],
+        faqTitle: "Tracking questions",
+        faqs: [
+          { q: "Why don't Meta's numbers match my site?", a: "Each platform measures differently, and part of ad numbers are estimates. Proper tracking brings them closer and tells you what to trust." },
+          { q: "What is GTM?", a: "A tool that lets us add and edit tracking codes in one place, without touching the site's code every time." },
+          { q: "Can I see the numbers myself?", a: "Of course. You get a dashboard you can open anytime, and every account is in your name." },
+        ],
+        ctaTitle: "Make decisions on numbers",
+        ctaText: "Tell me what tracking tools you have now, and I'll tell you what's missing.",
+        ctaBtn: "Audit my tracking",
+        waMsg: "Hi Muaz, I'd like you to audit my tracking and reporting.",
+      },
+    },
+  },
+  {
+    slug: "ai-automation",
+    group: "marketing",
+    icon: "ai",
+    tags: ["AI", "Automation", "Integrations", "Workflows"],
+    home: "#marketing",
+    copy: {
+      ar: {
+        short: "خلّي الشغل المكرر يصير لحاله",
+        nav: "الذكاء الاصطناعي والأتمتة",
+        metaTitle: "الذكاء الاصطناعي والأتمتة للمشاريع والتسويق | MUAZ TECH",
+        metaDesc: "استعمل الذكاء الاصطناعي والأتمتة بمشروعك: ردود ومتابعة تلقائية، تقارير بتطلع لحالها، محتوى أسرع، وربط أدواتك ببعض. أدوات بتوفّر وقت، مو بتبدّلك.",
+        eyebrow: "الذكاء الاصطناعي والأتمتة",
+        title: ["الأداة صارت عند الكل… ", "الميزة كيف بتستعملها"],
+        intro: "الذكاء الاصطناعي مش لعبة ولا بديل عنك. هو موظف سريع للشغل المكرر: ردود، تقارير، ترتيب بيانات، ومسودات محتوى. منختار المهام اللي بتوفّرلك وقت فعلاً ومنربطها بأدواتك.",
+        forTitle: "هالخدمة إلك إذا:",
+        forWho: [
+          "عم تضيّع ساعات على مهام بتتكرر كل يوم",
+          "بتنقل بيانات بإيدك بين الواتساب والجداول",
+          "بدك تنزّل محتوى أكتر بنفس الوقت",
+          "سمعت عن الذكاء الاصطناعي وما بتعرف من وين تبلّش",
+        ],
+        getTitle: "شو بتستلم",
+        get: [
+          "خريطة للمهام اللي فيها تصير تلقائية",
+          "أتمتة الردود والمتابعة والتذكيرات",
+          "ربط أدواتك ببعض (نماذج، واتساب، جداول، CRM)",
+          "أدوات AI لتسريع كتابة المحتوى والأفكار",
+          "تدريب بسيط إلك أو لفريقك",
+        ],
+        stepsTitle: "كيف منشتغل",
+        steps: [
+          { t: "منراقب يومك", d: "شو المهام اللي بتتكرر وبتاكل وقتك." },
+          { t: "منختار", d: "اللي فيه توفير حقيقي وما في خطر عالزبون." },
+          { t: "منبني ونربط", d: "أتمتة بسيطة ومضمونة، خطوة خطوة." },
+          { t: "منسلّم", d: "بتعرف كيف بيشتغل وكيف تعدّل عليه." },
+        ],
+        faqTitle: "أسئلة عن الأتمتة",
+        faqs: [
+          { q: "الذكاء الاصطناعي رح يرد عن الزبائن لحاله؟", a: "فيه، بس بحدود واضحة. منخلّيه للأسئلة المتكررة، والقرارات والبيع بيضلّوا عند إنسان." },
+          { q: "بياناتي بتضل آمنة؟", a: "منختار أدوات موثوقة، ومنحدد شو البيانات اللي بتنبعت وشو لأ، والحسابات بتكون باسمك." },
+          { q: "بدي خبرة تقنية لأستعمله؟", a: "لأ. منبنيه بطريقة بسيطة، وبتستلم شرح واضح كيف تستعمله." },
+        ],
+        ctaTitle: "وفّر وقتك للشغل اللي بيحتاجك",
+        ctaText: "قلّي شو أكتر شي بيتكرر بيومك، وبقلّك إذا فينا نخلّيه يصير لحاله.",
+        ctaBtn: "بدي وفّر وقتي",
+        waMsg: "أهلين معاذ، بدي استعمل الذكاء الاصطناعي والأتمتة بمشروعي.",
+      },
+      en: {
+        short: "Let repetitive work run itself",
+        nav: "AI & Automation",
+        metaTitle: "AI & Automation for Businesses and Marketing | MUAZ TECH",
+        metaDesc: "Put AI and automation to work in your business: automatic replies and follow-up, self-updating reports, faster content, and connected tools. Tools that save time, not replace you.",
+        eyebrow: "AI & automation",
+        title: ["Everyone has the tool now… ", "the edge is how you use it"],
+        intro: "AI isn't a toy or a replacement for you. It's a fast assistant for repetitive work: replies, reports, data cleanup, and content drafts. We pick the tasks that genuinely save you time and connect them to your tools.",
+        forTitle: "This is for you if:",
+        forWho: [
+          "You lose hours on tasks that repeat every day",
+          "You copy data by hand between WhatsApp and spreadsheets",
+          "You want to publish more content in the same time",
+          "You've heard about AI but don't know where to start",
+        ],
+        getTitle: "What you get",
+        get: [
+          "A map of the tasks that can be automated",
+          "Automated replies, follow-ups, and reminders",
+          "Your tools connected (forms, WhatsApp, sheets, CRM)",
+          "AI tools to speed up content writing and ideas",
+          "Simple training for you or your team",
+        ],
+        stepsTitle: "How we work",
+        steps: [
+          { t: "Observe", d: "Which tasks repeat and eat your time." },
+          { t: "Choose", d: "What saves real time without risk to customers." },
+          { t: "Build & connect", d: "Simple, reliable automation, step by step." },
+          { t: "Hand over", d: "You know how it works and how to change it." },
+        ],
+        faqTitle: "Automation questions",
+        faqs: [
+          { q: "Will AI answer customers on its own?", a: "It can, within clear limits. We keep it for repeated questions, while decisions and selling stay with a person." },
+          { q: "Is my data safe?", a: "We choose trusted tools, define what data is sent and what isn't, and the accounts are in your name." },
+          { q: "Do I need technical skills to use it?", a: "No. We build it simply, and you get a clear guide on how to use it." },
+        ],
+        ctaTitle: "Save your time for work that needs you",
+        ctaText: "Tell me what repeats most in your day, and I'll tell you if we can automate it.",
+        ctaBtn: "Save my time",
+        waMsg: "Hi Muaz, I'd like to use AI and automation in my business.",
+      },
+    },
+  },
+  {
     slug: "websites",
+    group: "dev",
     icon: "code",
     tags: ["Next.js", "React", "Landing pages", "Dashboards"],
     home: "#dev",
@@ -493,6 +864,7 @@ export const services: Service[] = [
   },
   {
     slug: "ux-ui",
+    group: "dev",
     icon: "ux",
     tags: ["Figma", "Wireframes", "Prototypes", "Design System"],
     home: "#ux",
@@ -583,6 +955,14 @@ export const services: Service[] = [
   },
 ];
 
+/** Menu/footer order */
+const ORDER = [
+  "marketing-strategy", "social-media", "meta-ads", "google-ads", "seo", "whatsapp-sales", "tracking-analytics", "ai-automation",
+  "websites", "ux-ui",
+];
+services.sort((a, b) => ORDER.indexOf(a.slug) - ORDER.indexOf(b.slug));
+export const servicesIn = (group: Service["group"]) => services.filter((s) => s.group === group);
+
 export const serviceHref = (lang: Lang, slug: string) =>
   `${lang === "ar" ? "" : "/en"}/services/${slug}`;
 
@@ -591,6 +971,7 @@ export const serviceBySlug = (slug: string) => services.find((s) => s.slug === s
 /** Small shared labels for service pages. */
 export const serviceUi: Record<Lang, {
   home: string; services: string; otherTitle: string; audit: string; auditText: string; more: string; allMarketing: string;
+  marketingGroup: string; devGroup: string; allDev: string;
 }> = {
   ar: {
     home: "الرئيسية",
@@ -600,6 +981,9 @@ export const serviceUi: Record<Lang, {
     auditText: "مش متأكد شو بيحتاج مشروعك؟ جاوب على ٦ أسئلة بدقيقتين.",
     more: "اعرف أكتر ←",
     allMarketing: "شوف كل خدمات التسويق",
+    marketingGroup: "خدمات التسويق الرقمي",
+    devGroup: "البرمجة | UX/UI Design",
+    allDev: "شوف قسم البرمجة",
   },
   en: {
     home: "Home",
@@ -609,5 +993,8 @@ export const serviceUi: Record<Lang, {
     auditText: "Not sure what your business needs? Answer 6 questions in two minutes.",
     more: "Learn more →",
     allMarketing: "See all marketing services",
+    marketingGroup: "Digital marketing services",
+    devGroup: "Development | UX/UI Design",
+    allDev: "See the development section",
   },
 };
