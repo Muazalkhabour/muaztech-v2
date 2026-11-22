@@ -14,8 +14,10 @@ const TYPING_MS = 650;
  * Scripted site assistant: canned answers written by Muaz (no invented prices
  * or promises), and anything typed is handed off to WhatsApp.
  */
-export function Assistant({ lang }: { lang: Lang }) {
+export function Assistant({ lang, home = true }: { lang: Lang; home?: boolean }) {
   const a = dicts[lang].assistant;
+  const path = dicts[lang].path;
+  const h = (hash: string) => (home ? hash : `${path === "/" ? "/" : path}${hash}`);
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([{ from: "bot", text: a.greeting }]);
   const [typing, setTyping] = useState(false);
@@ -120,7 +122,7 @@ export function Assistant({ lang }: { lang: Lang }) {
                   }
                   if ("link" in f && f.link) {
                     return (
-                      <a className="as-action" href={f.link.href} onClick={() => setOpen(false)}>{f.link.label}</a>
+                      <a className="as-action" href={h(f.link.href)} onClick={() => setOpen(false)}>{f.link.label}</a>
                     );
                   }
                   return null;

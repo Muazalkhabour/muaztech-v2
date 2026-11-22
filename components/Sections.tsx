@@ -3,6 +3,7 @@ import type { Dict } from "@/lib/dict";
 import { site, socials, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
 import { SocialLinks } from "./Social";
+import { serviceHref, serviceUi } from "@/lib/services";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const igUrl = `https://instagram.com/${site.instagram}`;
@@ -112,6 +113,7 @@ export function Dev({ t }: { t: Dict }) {
             <span className="eyebrow">{d.eyebrow}</span>
             <h2 className="h2">{d.title[0]}<span className="gold">{d.title[1]}</span></h2>
             <p className="lead">{d.lead}</p>
+            <a href={serviceHref(t.lang, "websites")} className="sec-more">{serviceUi[t.lang].more}</a>
           </div>
           <div className="terminal" dir="ltr">
             <div className="terminal__bar" aria-hidden="true">
@@ -156,6 +158,7 @@ export function UxUi({ t }: { t: Dict }) {
             <span className="eyebrow" dir="ltr" style={{ alignSelf: "flex-start" }}>{u.eyebrow}</span>
             <h2 className="h2">{u.title[0]}<span className="gold">{u.title[1]}</span></h2>
             <p className="lead">{u.lead}</p>
+            <a href={serviceHref(t.lang, "ux-ui")} className="sec-more">{serviceUi[t.lang].more}</a>
           </div>
           <ol className="grid ux-grid">
             {u.steps.map((s, i) => (
@@ -264,11 +267,34 @@ export function Library({ t }: { t: Dict }) {
   );
 }
 
+/* ---------- أسئلة شائعة ---------- */
+export function Faq({ t }: { t: Dict }) {
+  const f = t.faq;
+  return (
+    <section id="faq" className="section section--alt">
+      <div className="section__inner">
+        <div className="section-head">
+          <span className="eyebrow">{f.eyebrow}</span>
+          <h2 className="h2">{f.title}</h2>
+        </div>
+        <div className="faq-list">
+          {f.items.map((it) => (
+            <details key={it.q} className="faq card">
+              <summary>{it.q}<span className="faq__plus" aria-hidden="true" /></summary>
+              <p>{it.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- عني ---------- */
 export function About({ t }: { t: Dict }) {
   const a = t.about;
   return (
-    <section id="about" className="section section--alt">
+    <section id="about" className="section">
       <div className="section__inner about">
         <figure className="about__photo">
           <div className="about__frame">
@@ -309,7 +335,7 @@ export function About({ t }: { t: Dict }) {
 export function FinalCta({ t }: { t: Dict }) {
   const f = t.final;
   return (
-    <section className="section">
+    <section className="section section--alt">
       <div className="glow" aria-hidden="true"
         style={{ background: "radial-gradient(50% 80% at 50% 100%, rgba(212,175,55,0.22), transparent 70%)" }} />
       <div className="final">

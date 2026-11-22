@@ -12,9 +12,9 @@ const ar = {
   path: "/",
   arrow: "←",
   meta: {
-    title: "MUAZ TECH — تسويق رقمي مبني متل الكود",
+    title: "تسويق رقمي وتصميم مواقع | MUAZ TECH",
     description:
-      "بساعد أصحاب المشاريع يحوّلوا الزيارات لرسائل، والرسائل لزبائن. تسويق رقمي، برمجة، وتصميم UX/UI.",
+      "خدمات تسويق رقمي متكاملة: إعلانات ميتا وجوجل، إدارة سوشال ميديا، SEO، وتصميم مواقع بتبيع. معاذ الشمطي، مبرمج ومسوّق رقمي. اعمل فحص مجاني لمشروعك.",
     ogImage: "/og.jpg",
     ogAlt: "MUAZ TECH — تسويق رقمي مبني متل الكود",
     locale: "ar",
@@ -353,6 +353,19 @@ const ar = {
       whatsapp: "واتساب",
     },
   },
+  faq: {
+    eyebrow: "أسئلة شائعة",
+    title: "قبل ما تبعتلي… يمكن سؤالك هون",
+    items: [
+      { q: "بتشتغل مع مشاريع برّا تركيا؟", a: "إيه. بشتغل أونلاين مع أصحاب مشاريع من كل مكان، والتواصل بيكون عالواتساب ومكالمات الفيديو." },
+      { q: "من وين منبلّش؟", a: "من الفحص المجاني. بدقيقتين بتعرف وين وضعك، وبعدها بقلّك شو الأولوية لمشروعك، قبل ما تدفع شي." },
+      { q: "قديش الأسعار؟", a: "السعر حسب مشروعك وشو بيحتاج فعلاً. بعد الفحص بعطيك عرض واضح فيه شو بتستلم وقديش بيكلّف." },
+      { q: "قديش بياخد المشروع وقت؟", a: "بيختلف حسب الحجم. بتستلم خطة فيها المراحل والمدة قبل ما نبلّش، وتقرير أسبوعي طول الشغل." },
+      { q: "الحسابات والموقع بيكونوا باسمي؟", a: "أكيد. الدومين، الإعلانات، البكسل، والحسابات كلها باسمك. أنا شريك بالشغل، مو مالك إلها." },
+      { q: "بتضمنلي نتايج؟", a: "ما بوعد بأرقام ما بقدر أضمنها. اللي بضمنه إنه كل شي يكون مبني صح ومقاس، وإنك تعرف كل أسبوع شو عم يصير وشو القرار الجاي." },
+      { q: "بتشتغل بالعربي والإنجليزي؟", a: "إيه، المحتوى والمواقع والإعلانات بالعربي والإنجليزي حسب جمهورك." },
+    ],
+  },
   about: {
     eyebrow: "أنا معاذ",
     title: "مبرمج ومسوّق رقمي… بفكّر بالتسويق متل الكود",
@@ -434,9 +447,9 @@ const en: Dict = {
   path: "/en",
   arrow: "→",
   meta: {
-    title: "MUAZ TECH — Digital marketing, built like code",
+    title: "Digital Marketing & Web Design | MUAZ TECH",
     description:
-      "I help business owners turn visits into messages, and messages into customers. Digital marketing, web development, and UX/UI design.",
+      "Full-service digital marketing: Meta and Google ads, social media management, SEO, and websites that sell. By Muaz, developer and digital marketer. Get a free audit.",
     ogImage: "/og-en.jpg",
     ogAlt: "MUAZ TECH — Digital marketing, built like code",
     locale: "en_US",
@@ -774,6 +787,19 @@ const en: Dict = {
       github: "GitHub: my code",
       whatsapp: "WhatsApp",
     },
+  },
+  faq: {
+    eyebrow: "FAQ",
+    title: "Before you message me… your question might be here",
+    items: [
+      { q: "Do you work with businesses outside Turkey?", a: "Yes. I work online with business owners everywhere, over WhatsApp and video calls." },
+      { q: "Where do we start?", a: "With the free audit. In two minutes you'll see where you stand, then I'll tell you the priority for your business, before you pay anything." },
+      { q: "How much does it cost?", a: "Pricing depends on your project and what it actually needs. After the audit you get a clear proposal with what you get and what it costs." },
+      { q: "How long does a project take?", a: "It depends on the scope. You get a plan with phases and timing before we start, and a weekly report throughout." },
+      { q: "Will the accounts and website be in my name?", a: "Always. Domain, ads, pixel, and every account are in your name. I'm a partner in the work, not the owner of it." },
+      { q: "Do you guarantee results?", a: "I don't promise numbers I can't guarantee. What I guarantee is that everything is built right and measured, and that every week you know what's happening and what the next decision is." },
+      { q: "Do you work in Arabic and English?", a: "Yes, content, websites, and ads in Arabic and English, depending on your audience." },
+    ],
   },
   about: {
     eyebrow: "I'm Muaz",

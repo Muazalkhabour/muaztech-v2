@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { dicts, type Lang } from "@/lib/dict";
+import { serviceHref, serviceUi } from "@/lib/services";
+
+const PAGE: Record<string, string> = { social: "social-media", meta: "meta-ads", google: "google-ads", seo: "seo" };
 
 const ICONS: Record<string, React.ReactNode> = {
   strategy: (
@@ -145,6 +148,9 @@ export function Marketing({ lang }: { lang: Lang }) {
               <div className="chips" dir="ltr">
                 {it.tags.map((tag) => <span key={tag} className="chip">{tag}</span>)}
               </div>
+              {PAGE[it.icon] && (
+                <a href={serviceHref(lang, PAGE[it.icon])} className="mk-card__more">{serviceUi[lang].more}</a>
+              )}
             </li>
           ))}
         </ul>

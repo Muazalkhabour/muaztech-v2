@@ -5,7 +5,7 @@ import { Hero } from "./Hero";
 import { Audit } from "./Audit";
 import { Projects } from "./Projects";
 import { Marketing } from "./Marketing";
-import { Leak, How, Services, Dev, UxUi, Library, About, FinalCta } from "./Sections";
+import { Leak, How, Services, Dev, UxUi, Library, Faq, About, FinalCta } from "./Sections";
 import { Assistant } from "./Assistant";
 
 export function HomePage({ t }: { t: Dict }) {
@@ -22,9 +22,15 @@ export function HomePage({ t }: { t: Dict }) {
     availableLanguage: ["ar", "en"],
   };
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, faqLd]) }} />
       <Nav lang={t.lang} />
       <main>
         <Hero t={t} />
@@ -37,6 +43,7 @@ export function HomePage({ t }: { t: Dict }) {
         <UxUi t={t} />
         <Projects lang={t.lang} />
         <Library t={t} />
+        <Faq t={t} />
         <About t={t} />
         <FinalCta t={t} />
       </main>

@@ -40,3 +40,14 @@ npm run build
 ## النشر على Vercel
 
 Import للريبو بـ Vercel (الإعدادات الافتراضية بتكفي)، وبعدين ضيف الدومين `muaztech.com`.
+
+## SEO: الإعداد بعد شراء الدومين
+
+1. **الدومين:** Vercel ← Settings ← Domains ← ضيف الدومين وحط سجلات الـ DNS.
+2. **رابط الموقع:** Vercel ← Settings ← Environment Variables ← `NEXT_PUBLIC_SITE_URL` = `https://الدومين` ← Redeploy.
+3. **Google Search Console:** search.google.com/search-console ← Add property ← URL prefix ← اختار «HTML tag» وانسخ قيمة `content` بس ← حطها بـ `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` بـ Vercel ← Redeploy ← Verify.
+4. بـ Search Console ← Sitemaps ← اكتب `sitemap.xml` ← Submit.
+
+## صفحات الخدمات
+
+النصوص كلها بـ `lib/services.ts` (عربي وإنجليزي). كل خدمة إلها صفحة على `/services/<slug>` و`/en/services/<slug>`، وبتنضاف لحالها عالـ sitemap.

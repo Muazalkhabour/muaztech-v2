@@ -49,8 +49,15 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function Nav({ lang }: { lang: Lang }) {
+/**
+ * `home`: true on the landing page (in-page #anchors); false on sub-pages,
+ * where anchors point back to the landing page. `switchHref` overrides the
+ * language-switch target (e.g. the same service page in the other language).
+ */
+export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: boolean; switchHref?: string }) {
   const t = dicts[lang];
+  const base = home ? "" : t.path === "/" ? "/" : t.path;
+  const h = (hash: string) => `${base}${hash}`;
   const n = t.nav;
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
@@ -58,7 +65,7 @@ export function Nav({ lang }: { lang: Lang }) {
 
   // close the sheet first, then scroll once the header is back in the page flow
   const go = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const id = e.currentTarget.getAttribute("href")?.slice(1);
+    const id = e.currentTarget.getAttribute("href")?.split("#")[1];
     const el = id ? document.getElementById(id) : null;
     if (!open || !el) { setOpen(false); return; }
     e.preventDefault();
@@ -101,10 +108,10 @@ export function Nav({ lang }: { lang: Lang }) {
   return (
     <header className={`nav-wrap${open ? " is-open" : ""}`}>
       <nav aria-label={n.aria} className="nav">
-        <a href="#top" aria-label={n.home} onClick={close} className="brand-capsule">
+        <a href={home ? "#top" : t.path} aria-label={n.home} onClick={close} className="brand-capsule">
           <Brand />
         </a>
-        <a href={n.switchHref} hrefLang={n.switchLang} lang={n.switchLang} className="lang-switch"
+        <a href={switchHref ?? n.switchHref} hrefLang={n.switchLang} lang={n.switchLang} className="lang-switch"
           aria-label={n.switchAria}>
           {n.switchLabel}
         </a>
@@ -123,7 +130,7 @@ export function Nav({ lang }: { lang: Lang }) {
         </button>
         <div id="nav-links" className="nav__links">
           {n.links.map((l, i) => (
-            <a key={l.href} href={l.href} onClick={go}
+            <a key={l.href} href={h(l.href)} onClick={go}
               className={active === l.href.slice(1) ? "is-active" : undefined}
               aria-current={active === l.href.slice(1) ? "true" : undefined}
               style={{ "--i": i } as React.CSSProperties}>
@@ -135,7 +142,7 @@ export function Nav({ lang }: { lang: Lang }) {
             </a>
           ))}
         </div>
-        <a href="#audit" className="btn btn--pill nav__cta" onClick={go}>
+        <a href={h("#audit")} className="btn btn--pill nav__cta" onClick={go}>
           {n.cta}
         </a>
 

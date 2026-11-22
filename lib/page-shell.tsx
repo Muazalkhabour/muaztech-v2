@@ -43,6 +43,10 @@ export function buildMetadata(lang: Lang): Metadata {
       apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     },
     appleWebApp: { title: site.name, statusBarStyle: "black-translucent" },
+    // Google Search Console: put the token in NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION on Vercel
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+      : {}),
   };
 }
 
