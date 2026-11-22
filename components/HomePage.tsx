@@ -1,5 +1,5 @@
 import type { Dict } from "@/lib/dict";
-import { site } from "@/lib/site";
+import { site, socials } from "@/lib/site";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
 import { Audit } from "./Audit";
@@ -18,7 +18,7 @@ export function HomePage({ t }: { t: Dict }) {
     inLanguage: t.lang,
     image: `${site.url}/images/muaz-round.png`,
     founder: { "@type": "Person", name: t.lang === "ar" ? "معاذ" : "Muaz" },
-    sameAs: [`https://instagram.com/${site.instagram}`],
+    sameAs: socials.filter((s) => s.id !== "whatsapp").map((s) => s.href),
     availableLanguage: ["ar", "en"],
   };
 

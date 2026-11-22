@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Dict } from "@/lib/dict";
 import { site, waLink } from "@/lib/site";
 import { Brand, CapIcon } from "./Brand";
+import { SocialLinks } from "./Social";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const igUrl = `https://instagram.com/${site.instagram}`;
@@ -266,6 +267,10 @@ export function About({ t }: { t: Dict }) {
               </div>
             ))}
           </div>
+          <div className="about__social">
+            <span>{t.social.follow}</span>
+            <SocialLinks t={t} size="lg" />
+          </div>
         </div>
       </div>
     </section>
@@ -288,7 +293,7 @@ export function FinalCta({ t }: { t: Dict }) {
       <footer className="footer">
         <Brand size={18} />
         <small>{f.footer}</small>
-        <a href={igUrl} target="_blank" rel="noopener noreferrer" dir="ltr" style={{ fontSize: 14 }}>@{site.instagram}</a>
+        <SocialLinks t={t} />
       </footer>
     </section>
   );

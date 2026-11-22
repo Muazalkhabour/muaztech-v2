@@ -1980,3 +1980,51 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
   .as-launcher { bottom: 16px; inset-inline-start: 16px; }
   .to-top { bottom: 20px; inset-inline-end: 16px; }
 }
+
+/* ---------- social links ---------- */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transition: background 0.15s, color 0.15s, transform 0.15s, border-color 0.15s;
+}
+.social a:hover {
+  color: var(--bg-2);
+  background: var(--gold-grad);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+.social--lg a {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+.social--lg svg {
+  width: 22px;
+  height: 22px;
+}
+.about__social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+.about__social > span {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}

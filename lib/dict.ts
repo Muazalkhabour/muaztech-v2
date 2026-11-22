@@ -297,6 +297,16 @@ const ar = {
       { tag: "الذكاء الاصطناعي · ١٠", t: "الأداة صارت عند الكل… الميزة إنت", file: "«حدود»" },
     ],
   },
+  social: {
+    aria: "حساباتي على السوشال ميديا",
+    follow: "تابعني",
+    labels: {
+      instagram: "إنستغرام MUAZ TECH",
+      facebook: "فيسبوك",
+      github: "GitHub: مشاريعي البرمجية",
+      whatsapp: "واتساب",
+    },
+  },
   about: {
     eyebrow: "أنا معاذ",
     title: "مبرمج ومسوّق رقمي… بفكّر بالتسويق متل الكود",
@@ -662,6 +672,16 @@ const en: Dict = {
       { tag: "Your Numbers Talk · 1", t: "The number in Ads Manager… is partly an estimate, not a count", file: "\u201cAccuracy\u201d" },
       { tag: "AI for Business · 10", t: "Everyone has the tool now… the edge is you", file: "\u201cLimits\u201d" },
     ],
+  },
+  social: {
+    aria: "My social accounts",
+    follow: "Follow me",
+    labels: {
+      instagram: "MUAZ TECH on Instagram",
+      facebook: "Facebook",
+      github: "GitHub: my code",
+      whatsapp: "WhatsApp",
+    },
   },
   about: {
     eyebrow: "I'm Muaz",
