@@ -154,6 +154,7 @@ export function Projects({ lang }: { lang: Lang }) {
             <span className="eyebrow">{P.reviews.eyebrow}</span>
             <h2 className="h2">{P.reviews.title[0]}<span className="gold">{P.reviews.title[1]}</span></h2>
           </div>
+          <div className="reviews__grid">
           {P.reviews.items.map((r) => (
             <figure key={r.id} className="review card">
               <span className="review__mark" aria-hidden="true">&rdquo;</span>
@@ -162,7 +163,7 @@ export function Projects({ lang }: { lang: Lang }) {
                 <p className="review__text">{r.text}</p>
               </blockquote>
               <figcaption className="review__who">
-                <span className="review__avatar" aria-hidden="true">{lang === "ar" ? "ح" : "H"}</span>
+                <span className="review__avatar" aria-hidden="true">{r.avatar}</span>
                 <span className="review__meta">
                   <strong>{r.who}</strong>
                   <span>{r.what}</span>
@@ -173,6 +174,7 @@ export function Projects({ lang }: { lang: Lang }) {
               </figcaption>
             </figure>
           ))}
+          </div>
           <p className="review__source">{P.reviews.source}</p>
         </div>
       </div>

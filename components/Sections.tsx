@@ -320,6 +320,7 @@ export function About({ t }: { t: Dict }) {
               <li key={st.l}><strong>{st.v}</strong><span>{st.l}</span></li>
             ))}
           </ul>
+          <p className="about__countries">{a.countries}</p>
           <ul className="grid about__pillars">
             {a.pillars.map((p) => (
               <li key={p.t} className="pillar card">
