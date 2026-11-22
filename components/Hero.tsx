@@ -23,7 +23,7 @@ export function Hero({ t }: { t: Dict }) {
         <div className="hero__halo" aria-hidden="true" />
         <div className="hero__code" aria-hidden="true" dir="ltr">&lt;/&gt;</div>
         <Image
-          src="/images/muaz-hero.png"
+          src="/images/muaz-hero.webp"
           alt={h.photoAlt}
           width={768}
           height={768}

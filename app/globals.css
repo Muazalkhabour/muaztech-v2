@@ -415,7 +415,6 @@ img {
   -webkit-text-stroke: 3px rgba(245, 215, 122, 0.85);
   text-shadow: 0 0 40px rgba(212, 175, 55, 0.35);
   user-select: none;
-  animation: codePulse 6s ease-in-out infinite;
 }
 @keyframes codePulse {
   0%, 100% { text-shadow: 0 0 40px rgba(212, 175, 55, 0.35); }
@@ -2352,3 +2351,9 @@ html[dir="rtl"] .as-send svg { transform: scaleX(-1); }
   .brand-capsule { padding: 7px 13px; }
   .brand-capsule .brand { font-size: 16px !important; }
 }
+
+/* perf: the glow "breathes" via opacity on the halo layer (GPU-composited),
+   instead of animating a huge text-shadow every frame */
+.hero__halo { animation: haloBreath 6s ease-in-out infinite; will-change: opacity; }
+@keyframes haloBreath { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hero__halo { animation: none; } }
