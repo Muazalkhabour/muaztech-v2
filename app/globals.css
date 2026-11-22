@@ -2564,3 +2564,38 @@ html[dir="ltr"] .nav__dd:focus-within .nav__dd-panel { transform: translateX(-50
 }
 .foot-svcs a:hover { color: var(--gold-light); border-color: rgba(212, 175, 55, 0.5); }
 @media (max-width: 640px) { .foot-svcs { align-items: center; text-align: center; } .foot-svcs ul { justify-content: center; } }
+
+/* phones: services as a collapsed accordion */
+.nav__dd-toggle { display: none; }
+@media (max-width: 1000px) {
+  .nav-wrap.is-open .nav__dd > a.nav__dd-trigger { display: none; }
+  .nav-wrap.is-open .nav__dd-toggle {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 56px;
+    padding: 0 14px;
+    border-radius: 16px;
+    background: #141417;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    color: var(--gold-light);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: start;
+    cursor: pointer;
+  }
+  .nav-wrap.is-open .nav__dd-toggle .nav__icon { display: inline-flex; width: 38px; height: 38px; border-radius: 11px; align-items: center; justify-content: center; background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.4); }
+  .nav__dd-toggle-label { flex: 1; }
+  .nav__dd-chev {
+    flex: 0 0 auto;
+    width: 30px; height: 30px; padding: 5px; border-radius: 50%;
+    background: rgba(212, 175, 55, 0.14);
+    transition: transform 0.25s;
+  }
+  .nav__dd.is-svc-open .nav__dd-chev { transform: rotate(180deg); }
+  .nav__dd.is-svc-open .nav__dd-toggle { background: linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.04)), #121215; }
+  .nav-wrap.is-open .nav__dd:not(.is-svc-open) .nav__dd-panel { display: none; }
+  .nav-wrap.is-open .nav__dd.is-svc-open .nav__dd-panel { animation: navIn 0.22s ease-out both; }
+}

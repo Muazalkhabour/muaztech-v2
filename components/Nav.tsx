@@ -63,6 +63,7 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
   const n = t.nav;
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
+  const [svcOpen, setSvcOpen] = useState(false);
   const close = () => setOpen(false);
 
   // close the sheet first, then scroll once the header is back in the page flow
@@ -80,7 +81,7 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
 
   // lock page scroll + Escape to close while the mobile menu is open
   useEffect(() => {
-    if (!open) return;
+    if (!open) { setSvcOpen(false); return; }
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -151,9 +152,20 @@ export function Nav({ lang, home = true, switchHref }: { lang: Lang; home?: bool
             );
             if (!("menu" in l && l.menu)) return link;
             return (
-              <div key={l.href} className="nav__dd" style={{ "--i": i } as React.CSSProperties}>
+              <div key={l.href} className={`nav__dd${svcOpen ? " is-svc-open" : ""}`} style={{ "--i": i } as React.CSSProperties}>
                 {link}
-                <div className="nav__dd-panel">
+                {/* phones: a collapsed toggle instead of the plain link */}
+                <button type="button" className="nav__dd-toggle" aria-expanded={svcOpen} aria-controls="nav-svc-panel"
+                  onClick={() => setSvcOpen((o) => !o)}>
+                  <span className="nav__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
+                      strokeLinecap="round" strokeLinejoin="round">{ICONS[l.icon]}</svg>
+                  </span>
+                  <span className="nav__dd-toggle-label">{n.servicesMobile}</span>
+                  <svg className="nav__dd-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                </button>
+                <div className="nav__dd-panel" id="nav-svc-panel">
                   <ul>
                     {services.map((s) => (
                       <li key={s.slug}>
